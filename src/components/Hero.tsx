@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Button from './ui/Button';
 import PhoneFrame from './ui/PhoneFrame';
-import appScreen1 from '../assets/uploaded_image_1_1768145923802.png';
-import appScreen2 from '../assets/uploaded_image_1_1768145923802.png';
+import appScreen1 from '../assets/patient_app_1.png';
+import appScreen2 from '../assets/patient_app_2.png';
 
 const Hero = () => {
     return (
@@ -65,7 +65,7 @@ const Hero = () => {
                             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                             className="absolute left-1/2 top-1/2 -translate-x-[60%] -translate-y-[60%] z-10 scale-90 rotate-[-6deg]"
                         >
-                            <PhoneFrame src={appScreen2} alt="App Home Page" className="shadow-2xl shadow-primary-900/20" />
+                            <PhoneFrame src={appScreen1} alt="App Home Page" className="shadow-2xl shadow-primary-900/20" />
                         </motion.div>
 
                         {/* Phone 2 (Front/Right - Patient Home Page) */}
@@ -74,7 +74,7 @@ const Hero = () => {
                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                             className="absolute left-1/2 top-1/2 -translate-x-[30%] -translate-y-[40%] z-20 rotate-[12deg]"
                         >
-                            <PhoneFrame src={appScreen1} alt="Patient Home Page" className="shadow-2xl shadow-secondary-900/20" />
+                            <PhoneFrame src={appScreen2} alt="Patient Home Page" className="shadow-2xl shadow-secondary-900/20" />
                         </motion.div>
 
                         {/* Abstract Blur behind phones */}

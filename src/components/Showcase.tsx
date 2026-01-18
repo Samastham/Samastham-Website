@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Button from './ui/Button';
-import appHomePage from '../assets/uploaded_image_1_1768145923802.png';
+import patientApp1 from '../assets/patient_app_1.png';
+import patientApp2 from '../assets/patient_app_2.png';
+import patientApp3 from '../assets/patient_app_3.png';
 
 const Showcase = () => {
     return (
@@ -15,16 +17,29 @@ const Showcase = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             initial={{ opacity: 0, scale: 0.9 }}
                             transition={{ duration: 0.6 }}
-                            className="relative z-10 rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white max-w-md mx-auto lg:max-w-lg"
+                            className="relative z-10 w-full max-w-[500px] mx-auto h-[600px] flex items-center justify-center"
                         >
-                            <img src={appHomePage} alt="Samastham Patient App Home Page" className="w-full h-auto object-cover" />
+                            {/* Back Left Image */}
+                            <div className="absolute left-0 top-10 transform -rotate-6 w-56 shadow-2xl rounded-3xl border-4 border-white bg-white overflow-hidden z-0">
+                                <img src={patientApp2} alt="Patient App Screen 2" className="w-full h-auto" />
+                            </div>
 
-                            {/* Floating badge */}
-                            <div className="absolute bottom-8 right-8 bg-white/90 backdrop-blur pb-3 pt-4 px-6 rounded-2xl shadow-xl border border-white/50 animate-bounce-slow">
-                                <p className="text-secondary-500 text-xs font-semibold uppercase tracking-wider mb-1">Efficiency</p>
+                            {/* Back Right Image */}
+                            <div className="absolute right-0 top-16 transform rotate-6 w-56 shadow-2xl rounded-3xl border-4 border-white bg-white overflow-hidden z-0">
+                                <img src={patientApp1} alt="Patient App Screen 1" className="w-full h-auto" />
+                            </div>
+
+                            {/* Main Center Image */}
+                            <div className="absolute top-0 transform w-64 shadow-2xl rounded-3xl border-4 border-white bg-white overflow-hidden z-10">
+                                <img src={patientApp3} alt="Patient App Home" className="w-full h-auto" />
+                            </div>
+
+                            {/* Floating badge - Made smaller */}
+                            <div className="absolute bottom-20 -right-4 bg-white/95 backdrop-blur py-3 px-5 rounded-xl shadow-xl border border-secondary-100 animate-bounce-slow z-20">
+                                <p className="text-secondary-500 text-[10px] font-bold uppercase tracking-wider mb-0.5">Efficiency</p>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-2xl font-bold text-secondary-900">30%</span>
-                                    <span className="text-sm font-medium text-green-600">Faster Booking</span>
+                                    <span className="text-lg font-extrabold text-secondary-900">30%</span>
+                                    <span className="text-xs font-semibold text-green-600">Faster Booking</span>
                                 </div>
                             </div>
                         </motion.div>
