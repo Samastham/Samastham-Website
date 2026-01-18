@@ -4,32 +4,32 @@ import { Code2, BrainCircuit, Globe, LineChart, ShieldCheck, Smartphone } from "
 
 const services = [
     {
-        title: "Custom App Development",
-        description: "End-to-end mobile and web application development tailored to your enterprise needs.",
+        title: "Enterprise Architecture",
+        description: "Scalable, distributed systems designed for mission-critical, high-throughput enterprise operations.",
         icon: Smartphone,
         color: "text-blue-500"
     },
     {
-        title: "AI & Intelligent Agents",
-        description: "Deploy autonomous agents that handle complex workflows in healthcare and operations.",
+        title: "Intelligent Automation",
+        description: "Deploy self-governing AI agents that handle complex decision-making workflows in real-time.",
         icon: BrainCircuit,
         color: "text-purple-500"
     },
     {
-        title: "Digital Transformation",
-        description: "Modernize legacy systems with cloud-native architecture and scalable infrastructure.",
+        title: "Legacy Modernization",
+        description: "Transform monolithic legacy systems into agile, microservices-based cloud architectures.",
         icon: Globe,
         color: "text-teal-500"
     },
     {
-        title: "Data Analytics",
-        description: "Turn raw data into actionable insights with advanced visualization and predictive modeling.",
+        title: "Predictive Intelligence",
+        description: "Turn raw operational data into foresight with advanced predictive modeling and visualization.",
         icon: LineChart,
         color: "text-orange-500"
     },
     {
-        title: "Enterprise Security",
-        description: "Bank-grade security implementation, HIPAA compliance, and rigorous audit trails.",
+        title: "Compliance & Security",
+        description: "SOC2 and HIPAA-compliant infrastructures with bank-grade encryption and audit trails.",
         icon: ShieldCheck,
         color: "text-red-500"
     },

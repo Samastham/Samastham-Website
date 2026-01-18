@@ -23,12 +23,12 @@ export function Hero() {
                             <span>Infrastructure for Scale</span>
                         </div>
                         <h1 className="text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-                            Connect <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500">Everything.</span>
+                            Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500">The Future</span>
                             <br />
-                            Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Everywhere.</span>
+                            of <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Digital Intelligence.</span>
                         </h1>
                         <p className="text-xl text-muted-foreground leading-relaxed">
-                            The comprehensive platform for building intelligent healthcare and food agents. Secure, verified, and infinitely scalable.
+                            The comprehensive platform for building scalable, high-performance enterprise applications. Secure, verified, and infinitely adaptable.
                         </p>
                     </motion.div>
 
@@ -39,10 +39,10 @@ export function Hero() {
                         className="flex flex-col sm:flex-row gap-4"
                     >
                         <Button size="lg" className="rounded-full text-base h-12 shadow-blue-500/25 shadow-lg bg-primary hover:bg-primary/90 px-8">
-                            Start Integration
+                            Contact Sales
                         </Button>
                         <Button variant="outline" size="lg" className="rounded-full text-base h-12 border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-sm px-8">
-                            View Platform
+                            View Documentation
                         </Button>
                     </motion.div>
 
@@ -62,77 +62,119 @@ export function Hero() {
                     </div>
                 </div>
 
-                {/* Visual Content: Isometric Tech Stack */}
+                {/* Visual Content: Glassmorphic Dashboard Mockup */}
                 <div className="relative hidden lg:block h-[600px] w-full perspective-[1000px]">
                     <div className="relative w-full h-full flex items-center justify-center">
-                        {/* Isometric Container */}
                         <motion.div
-                            initial={{ rotateX: 60, rotateZ: -40, opacity: 0, scale: 0.8 }}
-                            animate={{ rotateX: 60, rotateZ: -40, opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, rotateX: 20, rotateY: -20, scale: 0.9 }}
+                            animate={{ opacity: 1, rotateX: 10, rotateY: -15, scale: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative w-96 h-96 transform-style-3d"
+                            whileHover={{ rotateX: 5, rotateY: -5, scale: 1.02 }}
+                            className="relative w-[500px] h-[350px] bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl transform-style-3d group"
                         >
-                            {/* Layer 1: Data Infrastructure (Bottom) */}
-                            <motion.div
-                                animate={{ z: 0 }}
-                                className="absolute inset-0 bg-slate-900/80 border border-blue-500/30 rounded-3xl shadow-2xl backdrop-blur-sm transform translate-z-[0px]"
-                            >
-                                {/* Grid Pattern */}
-                                <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.1)_1px,transparent_1px)] bg-[size:20px_20px] rounded-3xl" />
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-16 h-16 rounded-full bg-blue-500/20 blur-xl" />
+                            {/* Dashboard Header */}
+                            <div className="h-10 border-b border-white/5 flex items-center px-4 gap-2">
+                                <div className="flex gap-1.5">
+                                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+                                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+                                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
                                 </div>
-                            </motion.div>
+                                <div className="ml-4 h-4 w-32 bg-white/5 rounded-full" />
+                            </div>
 
-                            {/* Layer 2: Intelligence/Logic (Middle) */}
-                            <motion.div
-                                initial={{ z: 0 }}
-                                animate={{ z: 80 }}
-                                transition={{ delay: 0.2, duration: 1, ease: "spring" }}
-                                className="absolute inset-0 bg-indigo-900/60 border border-purple-500/30 rounded-3xl shadow-xl backdrop-blur-md transform translate-z-[80px]"
-                            >
-                                <div className="absolute inset-4 border border-white/5 rounded-2xl" />
-                                {/* Glowing Nodes */}
-                                <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-purple-400 rounded-full shadow-[0_0_10px_rgba(192,132,252,0.8)] animate-pulse" />
-                                <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-purple-400 rounded-full shadow-[0_0_10px_rgba(192,132,252,0.8)] animate-pulse delay-300" />
-                                <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-purple-400 rounded-full shadow-[0_0_10px_rgba(192,132,252,0.8)] animate-pulse delay-700" />
+                            {/* Dashboard Body */}
+                            <div className="p-6 grid grid-cols-3 gap-4 h-[calc(100%-40px)]">
+                                {/* Main Chart Area */}
+                                <div className="col-span-2 space-y-4">
+                                    <div className="flex justify-between items-end mb-2">
+                                        <div>
+                                            <div className="text-xs text-muted-foreground">Total Requests</div>
+                                            <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">2,543,902</div>
+                                        </div>
+                                        <div className="flex gap-1">
+                                            {[1, 2, 3, 4, 5, 6].map((i) => (
+                                                <motion.div
+                                                    key={i}
+                                                    className="w-1.5 bg-blue-500 rounded-full"
+                                                    animate={{ height: [10, 24, 14, 30, 18] }}
+                                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: i * 0.1 }}
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
 
-                                {/* Connection Lines */}
-                                <svg className="absolute inset-0 w-full h-full opacity-30">
-                                    <path d="M100 100 L250 200" stroke="white" strokeWidth="1" />
-                                    <path d="M250 200 L300 150" stroke="white" strokeWidth="1" />
-                                </svg>
-                            </motion.div>
+                                    <div className="h-32 w-full bg-gradient-to-b from-blue-500/10 to-transparent rounded-lg border border-blue-500/20 relative overflow-hidden">
+                                        <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                            <motion.path
+                                                d="M0 128 C 50 128, 50 40, 100 40 C 150 40, 150 100, 200 100 C 250 100, 250 20, 300 20 L 300 128 Z"
+                                                fill="url(#gradient)"
+                                                initial={{ d: "M0 128 L 300 128 Z" }}
+                                                animate={{ d: "M0 128 C 50 128, 50 40, 100 40 C 150 40, 150 100, 200 100 C 250 100, 250 20, 300 20 L 300 128 Z" }}
+                                                transition={{ duration: 2, ease: "easeOut" }}
+                                            />
+                                            <defs>
+                                                <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="0%" stopColor="rgba(59, 130, 246, 0.4)" />
+                                                    <stop offset="100%" stopColor="rgba(59, 130, 246, 0)" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
 
-                            {/* Layer 3: Application/Interface (Top) */}
-                            <motion.div
-                                initial={{ z: 0 }}
-                                animate={{ z: 160 }}
-                                transition={{ delay: 0.4, duration: 1, ease: "spring" }}
-                                className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl shadow-2xl backdrop-blur-xl transform translate-z-[160px] flex items-center justify-center"
-                            >
-                                <div className="w-24 h-24 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-2xl shadow-lg flex items-center justify-center">
-                                    <div className="text-white font-bold text-4xl">S</div>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        <div className="h-16 rounded-lg bg-white/5 border border-white/5 p-3">
+                                            <div className="w-6 h-6 rounded bg-green-500/20 mb-2 flex items-center justify-center">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                                            </div>
+                                            <div className="w-12 h-2 bg-white/10 rounded" />
+                                        </div>
+                                        <div className="h-16 rounded-lg bg-white/5 border border-white/5 p-3">
+                                            <div className="w-6 h-6 rounded bg-orange-500/20 mb-2 flex items-center justify-center">
+                                                <motion.div
+                                                    animate={{ rotate: 360 }}
+                                                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                                                    className="w-3 h-3 border-2 border-orange-400 border-t-transparent rounded-full"
+                                                />
+                                            </div>
+                                            <div className="w-16 h-2 bg-white/10 rounded" />
+                                        </div>
+                                    </div>
                                 </div>
 
-                                {/* Floating Badge */}
-                                <motion.div
-                                    animate={{ y: [0, -10, 0] }}
-                                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                                    className="absolute -top-10 -right-10 px-4 py-2 bg-green-500/20 border border-green-500/30 text-green-400 rounded-full text-xs font-bold backdrop-blur-md transform rotate-x-0"
-                                >
-                                    Active
-                                </motion.div>
-                            </motion.div>
+                                {/* Side Panel */}
+                                <div className="space-y-2">
+                                    <div className="text-[10px] items-center text-muted-foreground mb-2 flex justify-between">
+                                        <span>ACTIVE NODES</span>
+                                        <span className="text-green-400">●</span>
+                                    </div>
+                                    {[1, 2, 3, 4].map((i) => (
+                                        <div key={i} className="h-10 rounded bg-white/5 border border-white/5 flex items-center px-2 gap-2">
+                                            <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 shrink-0" />
+                                            <div className="flex-1 min-w-0">
+                                                <div className="h-1.5 w-12 bg-white/20 rounded mb-1" />
+                                                <div className="h-1 w-8 bg-white/10 rounded" />
+                                            </div>
+                                        </div>
+                                    ))}
+                                    <div className="h-24 rounded bg-white/5 border border-dashed border-white/10 mt-4 flex flex-col items-center justify-center text-center p-2">
+                                        <span className="text-2xl mb-1">+</span>
+                                        <span className="text-[10px] text-muted-foreground">Deploy Agent</span>
+                                    </div>
+                                </div>
+                            </div>
 
-                            {/* Connecting vertical beams (Abstract) */}
+                            {/* Floating Notification */}
                             <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 0.5 }}
-                                transition={{ delay: 1, duration: 1 }}
-                                className="absolute inset-0 flex items-center justify-center transform translate-z-[80px]"
+                                initial={{ opacity: 0, x: 20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 1, type: "spring" }}
+                                className="absolute -right-12 top-10 bg-slate-800 border border-green-500/30 p-3 rounded-lg shadow-xl flex items-center gap-3 transform translate-z-12"
                             >
-                                <div className="w-1 h-40 bg-gradient-to-b from-blue-500 to-purple-500 blur-md transform -translate-z-[40px]" />
+                                <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-lg">✓</div>
+                                <div>
+                                    <div className="text-xs font-bold text-white">Deployment Complete</div>
+                                    <div className="text-[10px] text-muted-foreground">Just now</div>
+                                </div>
                             </motion.div>
                         </motion.div>
                     </div>

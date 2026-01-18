@@ -9,7 +9,7 @@ const navLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/#services" },
     { name: "Products", href: "/products" },
-    { name: "About", href: "/about" },
+    { name: "Company", href: "/about" },
     { name: "Contact", href: "/contact" },
 ]
 
@@ -39,8 +39,9 @@ export function Navbar() {
                 )}
             >
                 <nav className="flex items-center justify-between">
-                    <Link to="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
-                        Samastham<span className="text-foreground">Connect</span>
+                    <Link to="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600 flex items-center gap-3">
+                        <img src="/logo.svg" alt="Samastham Logo" className="w-12 h-12 object-contain" />
+                        <span>Samastham<span className="text-foreground">Connect</span></span>
                     </Link>
 
                     {/* Desktop Nav */}

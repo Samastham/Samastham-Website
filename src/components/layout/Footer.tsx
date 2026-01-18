@@ -11,7 +11,7 @@ export function Footer() {
                             Samastham
                         </h3>
                         <p className="text-muted-foreground">
-                            Building the future of healthcare and food technology with advanced AI agents and seamless experiences.
+                            Global infrastructure for intelligent enterprise applications and supply chain optimization. Enterprise-grade security, infinite scalability.
                         </p>
                         <div className="flex space-x-4">
                             <Button variant="ghost" size="icon" className="hover:text-primary rounded-full">
@@ -34,7 +34,8 @@ export function Footer() {
                         <ul className="space-y-3 text-muted-foreground">
                             <li><a href="/about" className="hover:text-primary transition-colors">About Us</a></li>
                             <li><a href="/careers" className="hover:text-primary transition-colors">Careers</a></li>
-                            <li><a href="/blog" className="hover:text-primary transition-colors">Blog</a></li>
+                            <li><a href="/newsroom" className="hover:text-primary transition-colors">Newsroom</a></li>
+                            <li><a href="/security" className="hover:text-primary transition-colors">Security & Compliance</a></li>
                             <li><a href="/contact" className="hover:text-primary transition-colors">Contact</a></li>
                         </ul>
                     </div>
@@ -70,6 +71,8 @@ export function Footer() {
                     <div className="flex space-x-6 mt-4 md:mt-0">
                         <a href="/privacy" className="hover:text-primary">Privacy Policy</a>
                         <a href="/terms" className="hover:text-primary">Terms of Service</a>
+                        <a href="/cookies" className="hover:text-primary">Cookie Settings</a>
+                        <a href="/aup" className="hover:text-primary">Acceptable Use Policy</a>
                     </div>
                 </div>
             </div>
