@@ -22,21 +22,36 @@ export default function Products() {
 
                     {/* Healthcare Section */}
                     <div className="grid md:grid-cols-2 gap-12 items-center mb-24" id="healthcare">
-                        <div className="space-y-6">
-                            <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 font-medium text-sm">Healthcare</div>
-                            <h2 className="text-3xl font-bold">Healthcare App</h2>
-                            <p className="text-muted-foreground text-lg">
-                                Our clinical agent listens during clinic visits, drafts notes, suggests billing codes, and prepares orders for review. It saves doctors 8-12 minutes per visit.
-                            </p>
-                            <ul className="space-y-2">
-                                {['Ambient Validation', 'EHR Integration', 'Automated Coding'].map(item => (
-                                    <li key={item} className="flex items-center text-sm font-medium">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2" />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                            <Button className="rounded-full">Visit Website</Button>
+                        <div className="space-y-8">
+                            <div>
+                                <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 font-medium text-sm mb-4">Healthcare Agent</div>
+                                <h2 className="text-3xl font-bold mb-4">Intelligent Clinical Assistant</h2>
+                                <p className="text-muted-foreground text-lg mb-6">
+                                    A comprehensive AI solution that bridges the gap between patient care and clinical administration. Designed for the modern healthcare ecosystem.
+                                </p>
+
+                                <h3 className="text-lg font-semibold mb-3">Key Benefits</h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    {[
+                                        'Ambient Clinical Documentation',
+                                        'Automated medical coding',
+                                        'EHR Integration',
+                                        'Secure Patient Messaging',
+                                        'Appointment Scheduling',
+                                        'Personalized Care Plans'
+                                    ].map(item => (
+                                        <div key={item} className="flex items-center text-sm font-medium">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2" />
+                                            {item}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="flex gap-4">
+                                <Button className="rounded-full">Request Demo</Button>
+                                <Button className="rounded-full" variant="outline">Learn More</Button>
+                            </div>
                         </div>
                         <div className="h-80 bg-gradient-to-br from-blue-500/20 to-teal-500/20 rounded-2xl border border-white/10 flex items-center justify-center">
                             {/* Placeholder for Product UI */}

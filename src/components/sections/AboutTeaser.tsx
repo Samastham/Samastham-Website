@@ -15,7 +15,7 @@ export function AboutTeaser() {
                     >
                         <span className="text-sm font-medium text-purple-500 bg-purple-500/10 px-3 py-1 rounded-full">Who We Are</span>
                         <h2 className="text-4xl md:text-5xl font-bold mt-6 mb-6 leading-tight">
-                            Bridging the Gap Between <br />
+                            Connecting the Gap Between <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">Vision & Reality</span>
                         </h2>
                         <p className="text-lg text-muted-foreground mb-6">

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { Button } from "../ui/button"
+import { Activity, HeartPulse, Utensils } from "lucide-react"
 
 export function Hero() {
     return (
@@ -18,10 +19,7 @@ export function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <div className="inline-flex items-center gap-2 rounded-md bg-secondary/50 border border-white/10 px-3 py-1 text-sm font-medium text-primary mb-6">
-                            <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                            <span>Infrastructure for Scale</span>
-                        </div>
+                        {/* Chip removed as per feedback */}
                         <h1 className="text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
                             Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500">The Future</span>
                             <br />
@@ -31,6 +29,8 @@ export function Hero() {
                             The comprehensive platform for building scalable, high-performance enterprise applications. Secure, verified, and infinitely adaptable.
                         </p>
                     </motion.div>
+
+                    {/* ... (buttons remain) ... */}
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -62,120 +62,45 @@ export function Hero() {
                     </div>
                 </div>
 
-                {/* Visual Content: Glassmorphic Dashboard Mockup */}
+                {/* Visual Content: Connected Ecosystem/Network - Cleaned Up */}
                 <div className="relative hidden lg:block h-[600px] w-full perspective-[1000px]">
                     <div className="relative w-full h-full flex items-center justify-center">
                         <motion.div
-                            initial={{ opacity: 0, rotateX: 20, rotateY: -20, scale: 0.9 }}
-                            animate={{ opacity: 1, rotateX: 10, rotateY: -15, scale: 1 }}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            whileHover={{ rotateX: 5, rotateY: -5, scale: 1.02 }}
-                            className="relative w-[500px] h-[350px] bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl transform-style-3d group"
+                            className="relative w-full h-full flex items-center justify-center"
                         >
-                            {/* Dashboard Header */}
-                            <div className="h-10 border-b border-white/5 flex items-center px-4 gap-2">
-                                <div className="flex gap-1.5">
-                                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-                                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-                                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-                                </div>
-                                <div className="ml-4 h-4 w-32 bg-white/5 rounded-full" />
-                            </div>
-
-                            {/* Dashboard Body */}
-                            <div className="p-6 grid grid-cols-3 gap-4 h-[calc(100%-40px)]">
-                                {/* Main Chart Area */}
-                                <div className="col-span-2 space-y-4">
-                                    <div className="flex justify-between items-end mb-2">
-                                        <div>
-                                            <div className="text-xs text-muted-foreground">Total Requests</div>
-                                            <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">2,543,902</div>
-                                        </div>
-                                        <div className="flex gap-1">
-                                            {[1, 2, 3, 4, 5, 6].map((i) => (
-                                                <motion.div
-                                                    key={i}
-                                                    className="w-1.5 bg-blue-500 rounded-full"
-                                                    animate={{ height: [10, 24, 14, 30, 18] }}
-                                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: i * 0.1 }}
-                                                />
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    <div className="h-32 w-full bg-gradient-to-b from-blue-500/10 to-transparent rounded-lg border border-blue-500/20 relative overflow-hidden">
-                                        <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-                                            <motion.path
-                                                d="M0 128 C 50 128, 50 40, 100 40 C 150 40, 150 100, 200 100 C 250 100, 250 20, 300 20 L 300 128 Z"
-                                                fill="url(#gradient)"
-                                                initial={{ d: "M0 128 L 300 128 Z" }}
-                                                animate={{ d: "M0 128 C 50 128, 50 40, 100 40 C 150 40, 150 100, 200 100 C 250 100, 250 20, 300 20 L 300 128 Z" }}
-                                                transition={{ duration: 2, ease: "easeOut" }}
-                                            />
-                                            <defs>
-                                                <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                                                    <stop offset="0%" stopColor="rgba(59, 130, 246, 0.4)" />
-                                                    <stop offset="100%" stopColor="rgba(59, 130, 246, 0)" />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-
-                                    <div className="grid grid-cols-2 gap-2">
-                                        <div className="h-16 rounded-lg bg-white/5 border border-white/5 p-3">
-                                            <div className="w-6 h-6 rounded bg-green-500/20 mb-2 flex items-center justify-center">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                                            </div>
-                                            <div className="w-12 h-2 bg-white/10 rounded" />
-                                        </div>
-                                        <div className="h-16 rounded-lg bg-white/5 border border-white/5 p-3">
-                                            <div className="w-6 h-6 rounded bg-orange-500/20 mb-2 flex items-center justify-center">
-                                                <motion.div
-                                                    animate={{ rotate: 360 }}
-                                                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                                                    className="w-3 h-3 border-2 border-orange-400 border-t-transparent rounded-full"
-                                                />
-                                            </div>
-                                            <div className="w-16 h-2 bg-white/10 rounded" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Side Panel */}
-                                <div className="space-y-2">
-                                    <div className="text-[10px] items-center text-muted-foreground mb-2 flex justify-between">
-                                        <span>ACTIVE NODES</span>
-                                        <span className="text-green-400">●</span>
-                                    </div>
-                                    {[1, 2, 3, 4].map((i) => (
-                                        <div key={i} className="h-10 rounded bg-white/5 border border-white/5 flex items-center px-2 gap-2">
-                                            <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 shrink-0" />
-                                            <div className="flex-1 min-w-0">
-                                                <div className="h-1.5 w-12 bg-white/20 rounded mb-1" />
-                                                <div className="h-1 w-8 bg-white/10 rounded" />
-                                            </div>
-                                        </div>
-                                    ))}
-                                    <div className="h-24 rounded bg-white/5 border border-dashed border-white/10 mt-4 flex flex-col items-center justify-center text-center p-2">
-                                        <span className="text-2xl mb-1">+</span>
-                                        <span className="text-[10px] text-muted-foreground">Deploy Agent</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Floating Notification */}
+                            {/* Central Node */}
                             <motion.div
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 1, type: "spring" }}
-                                className="absolute -right-12 top-10 bg-slate-800 border border-green-500/30 p-3 rounded-lg shadow-xl flex items-center gap-3 transform translate-z-12"
+                                animate={{ boxShadow: ["0 0 20px rgba(59, 130, 246, 0.2)", "0 0 40px rgba(59, 130, 246, 0.4)", "0 0 20px rgba(59, 130, 246, 0.2)"] }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                className="w-40 h-40 rounded-full bg-slate-950 border border-blue-500/30 flex items-center justify-center relative z-20 shadow-2xl"
                             >
-                                <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-lg">✓</div>
-                                <div>
-                                    <div className="text-xs font-bold text-white">Deployment Complete</div>
-                                    <div className="text-[10px] text-muted-foreground">Just now</div>
+                                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-900/50 to-indigo-900/50 backdrop-blur-md flex items-center justify-center border border-white/10">
+                                    <Activity className="w-12 h-12 text-blue-200" />
                                 </div>
                             </motion.div>
+
+                            {/* Orbiting Rings - Cleaner */}
+                            {[1, 2, 3].map((i) => (
+                                <motion.div
+                                    key={i}
+                                    className="absolute rounded-full border border-blue-500/10"
+                                    style={{
+                                        width: 300 + i * 120,
+                                        height: 300 + i * 120,
+                                    }}
+                                    animate={{ rotate: i % 2 === 0 ? 360 : -360 }}
+                                    transition={{ duration: 40 + i * 10, repeat: Infinity, ease: "linear" }}
+                                >
+                                    <motion.div
+                                        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-blue-400/80 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]"
+                                    />
+                                </motion.div>
+                            ))}
+
+                            {/* Removed Floating Feature Cards and Connection Lines for cleaner look per request */}
                         </motion.div>
                     </div>
                 </div>

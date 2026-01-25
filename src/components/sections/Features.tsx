@@ -21,7 +21,7 @@ const features = [
         color: "text-teal-500",
         gradient: "from-teal-500/20 to-green-500/20",
         tags: ["24/7 Support", "Triage", "Scheduling"],
-        link: "/products#concierge"
+        link: "/products#healthcare"
     },
     {
         title: "Food Connect",
@@ -39,7 +39,7 @@ const features = [
         color: "text-purple-500",
         gradient: "from-purple-500/20 to-indigo-500/20",
         tags: ["Audit Logs", "Regulations", "Security"],
-        link: "/products#ops"
+        link: "/products#food"
     }
 ]
 
