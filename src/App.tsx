@@ -1,27 +1,34 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Showcase from './components/Showcase';
 import Footer from './components/Footer';
-
-
-import Testimonials from './components/Testimonials';
-import CallToAction from './components/CallToAction';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Providers from './pages/Providers';
+import Contact from './pages/Contact';
+import Medicines from './pages/Medicines';
+import Plans from './pages/Plans';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden selection:bg-primary-200 selection:text-primary-900">
-      <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <Showcase />
-        <Testimonials />
-        <CallToAction />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="min-h-screen bg-white overflow-x-hidden selection:bg-primary-200 selection:text-primary-900 font-sans">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/providers" element={<Providers />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/medicines" element={<Medicines />} />
+          <Route path="/plans" element={<Plans />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

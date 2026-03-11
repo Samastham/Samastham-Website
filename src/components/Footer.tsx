@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from '../assets/SamasthamLogoLarge.png';
+import { Link } from 'react-router-dom';
+import logo from '../assets/white wordmark svg.svg';
 
 const Footer = () => {
     return (
@@ -7,10 +8,10 @@ const Footer = () => {
             <div className="container mx-auto px-6">
                 <div className="grid md:grid-cols-4 gap-12 mb-16">
                     <div className="col-span-1 md:col-span-1">
-                        <div className="flex items-center gap-2 font-bold text-2xl text-white mb-6">
-                            <img src={logo} alt="Samastham" className="h-16 w-auto brightness-0 invert object-contain" />
-                        </div>
-                        <p className="text-secondary-400 leading-relaxed mb-6">
+                        <Link to="/" className="flex items-center gap-2 font-bold text-2xl text-white mb-6">
+                            <img src={logo} alt="Ayura" className="h-10 w-auto object-contain" />
+                        </Link>
+                        <p className="text-secondary-400 leading-relaxed mb-6 font-sans">
                             Empowering healthcare providers with next-generation digital tools.
                         </p>
                         <div className="flex gap-4">
@@ -27,9 +28,9 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="text-lg font-bold mb-6">Company</h4>
-                        <ul className="space-y-4 text-secondary-400">
-                            <li><a href="#" className="hover:text-primary-400 transition-colors">About Samastham</a></li>
+                        <h4 className="text-lg font-bold mb-6 font-heading">Company</h4>
+                        <ul className="space-y-4 text-secondary-400 font-sans">
+                            <li><Link to="/about" className="hover:text-primary-400 transition-colors">About Ayura</Link></li>
                             <li><a href="#" className="hover:text-primary-400 transition-colors">Leadership</a></li>
                             <li><a href="#" className="hover:text-primary-400 transition-colors">Careers</a></li>
                             <li><a href="#" className="hover:text-primary-400 transition-colors">Press & Media</a></li>
@@ -37,17 +38,17 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="text-lg font-bold mb-6">Product</h4>
-                        <ul className="space-y-4 text-secondary-400">
-                            <li><a href="#" className="hover:text-primary-400 transition-colors">Features</a></li>
-                            <li><a href="#" className="hover:text-primary-400 transition-colors">For Doctors</a></li>
-                            <li><a href="#" className="hover:text-primary-400 transition-colors">For Patients</a></li>
-                            <li><a href="#" className="hover:text-primary-400 transition-colors">Pricing</a></li>
+                        <h4 className="text-lg font-bold mb-6 font-heading">Product</h4>
+                        <ul className="space-y-4 text-secondary-400 font-sans">
+                            <li><Link to="/medicines" className="hover:text-primary-400 transition-colors">Medicines</Link></li>
+                            <li><Link to="/plans" className="hover:text-primary-400 transition-colors">Healthcare Plans</Link></li>
+                            <li><Link to="/providers" className="hover:text-primary-400 transition-colors">For Providers</Link></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">For Patients</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-lg font-bold mb-6">Get Updates</h4>
+                        <h4 className="text-lg font-bold mb-6 font-heading">Get Updates</h4>
                         <div className="flex flex-col gap-4">
                             <input
                                 type="email"
@@ -61,8 +62,8 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="border-t border-secondary-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-secondary-500 text-sm">
-                    <p>© 2026 Samastham Technologies Pvt. Ltd. All rights reserved.</p>
+                <div className="border-t border-secondary-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-secondary-500 text-sm font-sans">
+                    <p>© 2026 Ayura Health. All rights reserved.</p>
                     <div className="flex gap-6">
                         <a href="#" className="hover:text-white transition-colors">Corporate Profile</a>
                         <a href="#" className="hover:text-white transition-colors">Investor Relations</a>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
     {
-        quote: "Late-night medical concerns were always stressful until I started using Samastham. The AI assistance provided immediate, accurate guidance in Hindi.",
+        quote: "Late-night medical concerns were always stressful until I started using Ayura. The AI assistance provided immediate, accurate guidance in Hindi.",
         author: "Ramesh Gupta",
         role: "Farmer, Madhya Pradesh",
         image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=100&h=100"
@@ -32,11 +32,11 @@ const Testimonials = () => {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                     <span className="text-primary-600 font-semibold tracking-wide uppercase text-sm">Testimonials</span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mt-3 mb-6">
+                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-900 mt-3 mb-6">
                         Trusted by Leading <span className="text-primary-600">Healthcare Providers</span>
                     </h2>
-                    <p className="text-secondary-500 text-lg">
-                        Join thousands of doctors who have upgraded their practice with Samastham.
+                    <p className="text-secondary-500 text-lg font-sans">
+                        Join thousands of doctors who have upgraded their practice with Ayura.
                     </p>
                 </div>
 

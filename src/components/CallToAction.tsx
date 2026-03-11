@@ -17,7 +17,7 @@ const CallToAction = () => {
             </div>
 
             <div className="container mx-auto px-6 relative z-10 text-center">
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
                     Empowering Health. Everywhere.
                 </h2>
                 <p className="text-primary-100 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">

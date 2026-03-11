@@ -31,13 +31,13 @@ const Hero = () => {
                             <span className="text-sm font-medium text-secondary-600">50K+ Patients Trusted</span>
                         </div>
 
-                        <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-secondary-900 leading-[1.1] mb-6">
+                        <h1 className="text-5xl lg:text-7xl font-heading font-bold tracking-tight text-secondary-900 leading-[1.1] mb-6">
                             Engineering the Future of <br className="hidden lg:block" />
                             <span className="text-primary-600">Digital Health</span>
                         </h1>
 
-                        <p className="text-xl text-secondary-500 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                            Samastham Technologies builds advanced AI ecosystems to bridge the gap between quality medical care
+                        <p className="text-xl text-secondary-500 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-sans">
+                            Ayura builds advanced AI ecosystems to bridge the gap between quality medical care
                             and the underserved. We don't just create apps; we engineer accessible healthcare infrastructure.
                         </p>
 

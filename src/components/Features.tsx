@@ -17,7 +17,7 @@ const FeatureCard = ({ title, description, iconKey }: { title: string; descripti
             <div className="w-14 h-14 rounded-2xl bg-primary-50 text-primary-600 flex items-center justify-center mb-6 group-hover:bg-primary-500 group-hover:text-white transition-colors duration-300">
                 <Icon className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-bold text-secondary-900 mb-3">{title}</h3>
+            <h3 className="text-xl font-heading font-bold text-secondary-900 mb-3">{title}</h3>
             <p className="text-secondary-500 leading-relaxed">{description}</p>
         </div>
     );
@@ -62,7 +62,7 @@ const Features = () => {
             <div className="container mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <span className="text-primary-600 font-bold tracking-wide uppercase text-sm">Our Technology Stack</span>
-                    <h2 className="text-4xl font-bold text-secondary-900 mt-2 mb-4">
+                    <h2 className="text-4xl font-heading font-bold text-secondary-900 mt-2 mb-4">
                         Innovations Powering <span className="text-primary-600">Inclusive Care</span>
                     </h2>
                     <p className="text-lg text-secondary-500">
