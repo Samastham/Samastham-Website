@@ -1,0 +1,70 @@
+﻿
+> samastham-website@0.0.0 build
+> vite build
+
+[36mvite v7.2.7 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 37 modules transformed.
+node.exe : 
+[31mΓ£ù[39m Build 
+failed in 1.24s
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Users\hp\AppData\Ro
+aming\npm ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: ([31mΓ£ù[39m   
+  Build failed in 1    
+.24s:String) [], R    
+emoteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+[31merror during 
+build:
+[31mCould not resolve 
+"../assets/ayura/banner
+-teal.png" from "src/pa
+ges/Healthcare.tsx"[31
+m
+file: [36mC:/Users/hp/
+OneDrive/Desktop/Compan
+y_website/Samastham-Web
+site/src/pages/Healthca
+re.tsx[31m
+    at getRollupError (
+file:///C:/Users/hp/One
+Drive/Desktop/Company_w
+ebsite/Samastham-Websit
+e/node_modules/rollup/d
+ist/es/shared/parseAst.
+js:401:41)
+    at error (file:///C
+:/Users/hp/OneDrive/Des
+ktop/Company_website/Sa
+mastham-Website/node_mo
+dules/rollup/dist/es/sh
+ared/parseAst.js:397:42
+)
+    at ModuleLoader.han
+dleInvalidResolvedId (f
+ile:///C:/Users/hp/OneD
+rive/Desktop/Company_we
+bsite/Samastham-Website
+/node_modules/rollup/di
+st/es/shared/node-entry
+.js:21590:24)
+    at file:///C:/Users
+/hp/OneDrive/Desktop/Co
+mpany_website/Samastham
+-Website/node_modules/r
+ollup/dist/es/shared/no
+de-entry.js:21550:26[3
+9m

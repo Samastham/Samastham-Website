@@ -1,110 +1,132 @@
 import { motion } from "framer-motion"
 import { Button } from "../ui/button"
-import { Activity, HeartPulse, Utensils } from "lucide-react"
+import { Activity, Server, Zap, Users } from "lucide-react"
+import { HeroVisual } from "./HeroVisual"
+
+const metrics = [
+    { label: "Global Latency", value: "45ms", icon: Zap },
+    { label: "Uptime", value: "99.99%", icon: Server },
+    { label: "Active Agents", value: "12,450", icon: Users },
+]
 
 export function Hero() {
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
-            {/* Background Elements */}
-            <div className="absolute inset-0 z-0 pointer-events-none">
-                <div className="absolute top-[20%] right-[10%] w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px]" />
-                <div className="absolute bottom-[20%] left-[10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px]" />
-            </div>
+        <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden pt-20 bg-white">
+            {/* Background Accents */}
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50/50 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-purple-50/50 to-transparent pointer-events-none" />
 
-            <div className="container relative z-10 mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="container relative z-10 mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Text Content */}
-                <div className="space-y-8 max-w-2xl">
+                <div className="space-y-10 max-w-2xl">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        {/* Chip removed as per feedback */}
-                        <h1 className="text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-                            Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500">The Future</span>
-                            <br />
-                            of <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Digital Intelligence.</span>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-semibold mb-6">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                            </span>
+                            v2.4 Enterprise Release
+                        </div>
+
+                        <h1 className="text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-gray-900 mb-8">
+                            Engineering the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">Future</span> of Digital Intelligence.
                         </h1>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
-                            The comprehensive platform for building scalable, high-performance enterprise applications. Secure, verified, and infinitely adaptable.
+                        <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
+                            The comprehensive platform for building scalable, high-performance enterprise AI applications. Secure, verified, and ready for global scale.
                         </p>
                     </motion.div>
 
-                    {/* ... (buttons remain) ... */}
-
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="flex flex-col sm:flex-row gap-4"
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className="flex flex-col sm:flex-row gap-5"
                     >
-                        <Button size="lg" className="rounded-full text-base h-12 shadow-blue-500/25 shadow-lg bg-primary hover:bg-primary/90 px-8">
+                        <Button size="lg" className="rounded-full text-base h-14 bg-blue-600 hover:bg-blue-700 shadow-xl shadow-blue-600/20 px-10">
                             Contact Sales
                         </Button>
-                        <Button variant="outline" size="lg" className="rounded-full text-base h-12 border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-sm px-8">
+                        <Button variant="outline" size="lg" className="rounded-full text-base h-14 border-gray-200 hover:bg-gray-50 px-10">
                             View Documentation
                         </Button>
                     </motion.div>
 
-                    <div className="pt-8 border-t border-white/5 grid grid-cols-3 gap-8">
-                        <div>
-                            <div className="text-xl font-bold text-foreground">99.99%</div>
-                            <div className="text-xs text-muted-foreground">Uptime SLA</div>
-                        </div>
-                        <div>
-                            <div className="text-xl font-bold text-foreground">50ms</div>
-                            <div className="text-xs text-muted-foreground">Global Latency</div>
-                        </div>
-                        <div>
-                            <div className="text-xl font-bold text-foreground">SOC2</div>
-                            <div className="text-xs text-muted-foreground">Certified</div>
-                        </div>
+                    {/* Trust Badges placeholder or secondary metrics */}
+                    <div className="pt-10 border-t border-gray-100 grid grid-cols-3 gap-8">
+                        {metrics.map((m, i) => (
+                            <div key={i} className="space-y-1">
+                                <div className="text-2xl font-bold text-gray-900 tracking-tight">{m.value}</div>
+                                <div className="text-sm text-gray-500 font-medium flex items-center gap-1.5">
+                                    <m.icon className="w-3.5 h-3.5 text-blue-500" />
+                                    {m.label}
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
-                {/* Visual Content: Connected Ecosystem/Network - Cleaned Up */}
-                <div className="relative hidden lg:block h-[600px] w-full perspective-[1000px]">
-                    <div className="relative w-full h-full flex items-center justify-center">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative w-full h-full flex items-center justify-center"
-                        >
-                            {/* Central Node */}
-                            <motion.div
-                                animate={{ boxShadow: ["0 0 20px rgba(59, 130, 246, 0.2)", "0 0 40px rgba(59, 130, 246, 0.4)", "0 0 20px rgba(59, 130, 246, 0.2)"] }}
-                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                                className="w-40 h-40 rounded-full bg-slate-950 border border-blue-500/30 flex items-center justify-center relative z-20 shadow-2xl"
-                            >
-                                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-900/50 to-indigo-900/50 backdrop-blur-md flex items-center justify-center border border-white/10">
-                                    <Activity className="w-12 h-12 text-blue-200" />
-                                </div>
-                            </motion.div>
+                {/* Visual Content: 3D Node Sphere */}
+                <div className="relative h-[600px] lg:h-[700px] w-full">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                        className="w-full h-full"
+                    >
+                        <HeroVisual />
+                    </motion.div>
 
-                            {/* Orbiting Rings - Cleaner */}
-                            {[1, 2, 3].map((i) => (
-                                <motion.div
-                                    key={i}
-                                    className="absolute rounded-full border border-blue-500/10"
-                                    style={{
-                                        width: 300 + i * 120,
-                                        height: 300 + i * 120,
-                                    }}
-                                    animate={{ rotate: i % 2 === 0 ? 360 : -360 }}
-                                    transition={{ duration: 40 + i * 10, repeat: Infinity, ease: "linear" }}
-                                >
-                                    <motion.div
-                                        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-blue-400/80 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]"
-                                    />
-                                </motion.div>
-                            ))}
-
-                            {/* Removed Floating Feature Cards and Connection Lines for cleaner look per request */}
-                        </motion.div>
+                    {/* Floating Data Metrics around the Sphere */}
+                    <div className="absolute inset-0 pointer-events-none">
+                        <FloatingMetric
+                            className="top-[20%] left-[10%]"
+                            label="Latency"
+                            value="45ms"
+                            delay={0}
+                        />
+                        <FloatingMetric
+                            className="top-[15%] right-[15%]"
+                            label="Uptime"
+                            value="99.99%"
+                            delay={1}
+                        />
+                        <FloatingMetric
+                            className="bottom-[25%] right-[20%]"
+                            label="Security"
+                            value="SOC2 Type II"
+                            delay={2}
+                        />
                     </div>
                 </div>
             </div>
         </section>
     )
 }
+
+function FloatingMetric({ className, label, value, delay }: { className: string, label: string, value: string, delay: number }) {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{
+                opacity: 1,
+                y: [10, -10, 10],
+            }}
+            transition={{
+                opacity: { duration: 0.5, delay },
+                y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay }
+            }}
+            className={cn("absolute bg-white/80 backdrop-blur-md border border-white/50 rounded-2xl p-4 shadow-xl z-20", className)}
+        >
+            <div className="text-[10px] uppercase tracking-wider text-gray-400 font-bold mb-0.5">{label}</div>
+            <div className="text-sm font-bold text-blue-600">{value}</div>
+        </motion.div>
+    )
+}
+
+function cn(...classes: any[]) {
+    return classes.filter(Boolean).join(' ');
+}
+

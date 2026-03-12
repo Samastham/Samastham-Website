@@ -2,6 +2,7 @@ import { Navbar } from "../components/layout/Navbar"
 import { Footer } from "../components/layout/Footer"
 import { motion } from "framer-motion"
 import { Button } from "../components/ui/button"
+import { BrandAyura } from "../components/ui/BrandAyura"
 
 export default function Products() {
     return (
@@ -24,7 +25,10 @@ export default function Products() {
                     <div className="grid md:grid-cols-2 gap-12 items-center mb-24" id="healthcare">
                         <div className="space-y-8">
                             <div>
-                                <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 font-medium text-sm mb-4">Healthcare Agent</div>
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 mb-4">
+                                    <BrandAyura showIcon={true} iconSize="h-4" className="text-xs" />
+                                    <span className="text-gray-400 font-medium text-[10px] uppercase tracking-widest">(Healthcare AI)</span>
+                                </div>
                                 <h2 className="text-3xl font-bold mb-4">Intelligent Clinical Assistant</h2>
                                 <p className="text-muted-foreground text-lg mb-6">
                                     A comprehensive AI solution that bridges the gap between patient care and clinical administration. Designed for the modern healthcare ecosystem.

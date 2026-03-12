@@ -8,12 +8,25 @@ import Privacy from './pages/Privacy';
 
 import Careers from './pages/Careers';
 
+import Healthcare from './pages/Healthcare';
+import FoodTech from './pages/FoodTech';
+import Engagement from './pages/Engagement';
+import Solutions from './pages/Solutions';
+import SignIn from './pages/SignIn';
+import ScrollToTop from './components/layout/ScrollToTop';
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/healthcare" element={<Healthcare />} />
+        <Route path="/foodtech" element={<FoodTech />} />
+        <Route path="/engagement" element={<Engagement />} />
+        <Route path="/solutions" element={<Solutions />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />

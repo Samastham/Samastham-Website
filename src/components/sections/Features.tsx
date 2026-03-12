@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card"
 import { Button } from "../ui/button"
 import { Activity, Utensils, ArrowRight, ShieldCheck, HeartPulse, Clock } from "lucide-react"
+import { BrandAyura } from "../ui/BrandAyura"
 
 const features = [
     {
@@ -48,7 +49,7 @@ export function Features() {
     const isInView = useInView(ref, { once: true, margin: "-100px" })
 
     return (
-        <section ref={ref} className="py-24 relative overflow-hidden" id="solutions">
+        <section ref={ref} className="py-24 relative overflow-hidden bg-[#050505]" id="solutions">
             <div className="container mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
                     <motion.div
@@ -56,46 +57,64 @@ export function Features() {
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.5 }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold">Solutions for Real World</h2>
-                        <p className="text-muted-foreground text-lg mt-4">
+                        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">Solutions for Real World</h2>
+                        <p className="text-gray-400 text-xl font-medium mt-6">
                             From saving lives to feeding families, our technology bridges the gap between efficiency and care.
                         </p>
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {features.map((feature, index) => (
                         <motion.div
                             key={feature.title}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
+                            className="relative group"
                         >
-                            <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-zinc-900 group overflow-hidden relative">
-                                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                            {/* Glass Card Container */}
+                            <div className="h-full relative overflow-hidden rounded-[40px] bg-[#0a0a0a]/40 backdrop-blur-3xl border border-white/10 p-10 transition-all duration-500 hover:border-white/20 hover:shadow-[0_0_50px_rgba(255,255,255,0.05)] hover:-translate-y-2 group">
 
-                                <CardHeader>
-                                    <div className={`w-12 h-12 rounded-xl bg-background/80 backdrop-blur-sm flex items-center justify-center mb-4 ${feature.color} shadow-sm group-hover:scale-110 transition-transform duration-300`}>
-                                        <feature.icon className="w-6 h-6" />
+                                {/* Interactive Gradient Glow */}
+                                <div className={`absolute -inset-24 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-30 blur-[80px] transition-opacity duration-700`} />
+
+                                <div className="relative z-10 space-y-8">
+                                    {/* Glass Icon Container */}
+                                    <div className={`w-16 h-16 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-center ${feature.color} shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-700`}>
+                                        <feature.icon className="w-8 h-8" />
                                     </div>
-                                    <CardTitle className="text-xl group-hover:text-primary transition-colors">{feature.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent className="space-y-4 relative z-10">
-                                    <CardDescription className="text-base">
-                                        {feature.description}
-                                    </CardDescription>
-                                    <div className="flex flex-wrap gap-2">
+
+                                    <div className="space-y-4">
+                                        <h3 className="text-2xl font-black text-white tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/50 transition-all flex items-center gap-2">
+                                            {feature.title === "Healthcare Agent" ? (
+                                                <>
+                                                    <BrandAyura showIcon={true} iconSize="h-6" className="group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-teal-400 group-hover:to-emerald-400" />
+                                                    <span className="text-xs text-gray-500 font-bold uppercase tracking-widest">(Agent)</span>
+                                                </>
+                                            ) : feature.title}
+                                        </h3>
+                                        <p className="text-gray-400 text-lg leading-relaxed font-medium">
+                                            {feature.description}
+                                        </p>
+                                    </div>
+
+                                    <div className="flex flex-wrap gap-2 pt-2">
                                         {feature.tags.map(tag => (
-                                            <span key={tag} className="text-xs font-medium px-2 py-1 rounded-md bg-secondary/50 text-secondary-foreground border border-black/5 dark:border-white/10">
+                                            <span key={tag} className="text-[10px] uppercase tracking-widest font-black px-3 py-1.5 rounded-lg bg-white/5 text-gray-400 border border-white/5 group-hover:border-white/10 group-hover:text-gray-300 transition-colors">
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
-                                    <Button variant="link" className="p-0 h-auto group-hover:translate-x-1 transition-transform">
-                                        Learn more <ArrowRight className="w-4 h-4 ml-1" />
-                                    </Button>
-                                </CardContent>
-                            </Card>
+
+                                    <div className="pt-6 border-t border-white/5 flex items-center justify-between">
+                                        <Button variant="link" className="p-0 h-auto text-blue-400 font-black tracking-wide group-hover:text-blue-300 group-hover:translate-x-1 transition-all">
+                                            Learn more <ArrowRight className="w-5 h-5 ml-2" />
+                                        </Button>
+                                        <div className="w-3 h-3 rounded-full bg-blue-500/20 group-hover:bg-blue-500/50 transition-colors animate-pulse" />
+                                    </div>
+                                </div>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
