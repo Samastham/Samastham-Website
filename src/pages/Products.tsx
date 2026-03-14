@@ -26,7 +26,7 @@ export default function Products() {
                         <div className="space-y-8">
                             <div>
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 mb-4">
-                                    <BrandAyura showIcon={true} iconSize="h-4" className="text-xs" />
+                                    <BrandAyura type="full" size="h-5" />
                                     <span className="text-gray-400 font-medium text-[10px] uppercase tracking-widest">(Healthcare AI)</span>
                                 </div>
                                 <h2 className="text-3xl font-bold mb-4">Intelligent Clinical Assistant</h2>

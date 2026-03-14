@@ -1,5 +1,3 @@
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card"
 import { Button } from "../ui/button"
 import { Activity, Utensils, ArrowRight, ShieldCheck, HeartPulse, Clock } from "lucide-react"
@@ -45,32 +43,24 @@ const features = [
 ]
 
 export function Features() {
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: "-100px" })
-
     return (
-        <section ref={ref} className="py-24 relative overflow-hidden bg-[#050505]" id="solutions">
+        <section className="py-24 relative overflow-hidden bg-[#050505]" id="solutions">
             <div className="container mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">Solutions for Real World</h2>
+                    <div>
+                        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
+                            Solutions for Real World
+                        </h2>
                         <p className="text-gray-400 text-xl font-medium mt-6">
                             From saving lives to feeding families, our technology bridges the gap between efficiency and care.
                         </p>
-                    </motion.div>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {features.map((feature, index) => (
-                        <motion.div
+                        <div
                             key={feature.title}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
                             className="relative group"
                         >
                             {/* Glass Card Container */}
@@ -88,10 +78,7 @@ export function Features() {
                                     <div className="space-y-4">
                                         <h3 className="text-2xl font-black text-white tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/50 transition-all flex items-center gap-2">
                                             {feature.title === "Healthcare Agent" ? (
-                                                <>
-                                                    <BrandAyura showIcon={true} iconSize="h-6" className="group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-teal-400 group-hover:to-emerald-400" />
-                                                    <span className="text-xs text-gray-500 font-bold uppercase tracking-widest">(Agent)</span>
-                                                </>
+                                                <BrandAyura type="full" size="h-6" />
                                             ) : feature.title}
                                         </h3>
                                         <p className="text-gray-400 text-lg leading-relaxed font-medium">
@@ -115,7 +102,7 @@ export function Features() {
                                     </div>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

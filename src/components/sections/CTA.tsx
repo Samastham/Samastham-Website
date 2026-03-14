@@ -2,13 +2,15 @@ import { Button } from "../ui/button"
 
 export function CTA() {
     return (
-        <section className="py-24 relative overflow-hidden" id="contact">
-            <div className="absolute inset-0 bg-primary/5 -z-10" />
+        <section className="py-24 relative overflow-hidden bg-white" id="contact">
+            <div className="absolute inset-0 bg-blue-50/30 -z-10" />
             <div className="container mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
-                        <h2 className="text-4xl font-bold">Ready to transform your workflow?</h2>
-                        <p className="text-xl text-muted-foreground">
+                        <h2 className="text-4xl md:text-6xl font-black text-gray-900 leading-tight">
+                            Ready to transform your Workflow?
+                        </h2>
+                        <p className="text-xl text-gray-500 font-medium">
                             Join the waitlist for Samastham Connect and be the first to experience the future of intelligent agents.
                         </p>
                         <ul className="space-y-3">

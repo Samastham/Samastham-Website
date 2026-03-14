@@ -80,7 +80,7 @@ export function Navbar() {
                                                     <div className="font-bold text-gray-900 group-hover/item:text-blue-600 transition-colors uppercase tracking-tight text-xs flex items-center gap-2">
                                                         {item.name.includes("AYURA") ? (
                                                             <>
-                                                                <BrandAyura className="text-sm" />
+                                                                <BrandAyura type="full" size="h-5" />
                                                                 <span className="text-gray-400 font-medium text-[10px] uppercase tracking-widest ml-1">(Healthcare AI)</span>
                                                             </>
                                                         ) : item.name}
@@ -94,65 +94,8 @@ export function Navbar() {
                             </AnimatePresence>
                         </div>
 
-                        {/* Solutions */}
-                        <div className="relative group" onMouseEnter={() => setActiveMenu('solutions')} onMouseLeave={() => setActiveMenu(null)}>
-                            <button className="px-5 py-2 text-sm font-bold text-gray-700 hover:text-blue-600 flex items-center gap-1 transition-colors">
-                                Solutions <ChevronRight className={cn("w-4 h-4 transition-transform duration-300", activeMenu === 'solutions' && "rotate-90")} />
-                            </button>
-                            <AnimatePresence>
-                                {activeMenu === 'solutions' && (
-                                    <>
-                                        <div className="absolute top-full left-0 w-full h-4 bg-transparent" />
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: 10 }}
-                                            className="absolute top-full left-0 w-64 bg-white border border-gray-100 rounded-3xl shadow-2xl p-4 mt-2"
-                                        >
-                                            {solutions.map((item) => (
-                                                <Link key={item.name} to={item.href} className="block p-4 hover:bg-purple-50/50 rounded-2xl transition-all group/item">
-                                                    <div className="font-bold text-gray-900 group-hover/item:text-purple-600 transition-colors uppercase tracking-tight text-xs">{item.name}</div>
-                                                </Link>
-                                            ))}
-                                        </motion.div>
-                                    </>
-                                )}
-                            </AnimatePresence>
-                        </div>
-
-                        {/* Developer Hub */}
-                        <div className="relative group" onMouseEnter={() => setActiveMenu('dev')} onMouseLeave={() => setActiveMenu(null)}>
-                            <button className="px-5 py-2 text-sm font-bold text-gray-700 hover:text-blue-600 flex items-center gap-1 transition-colors">
-                                Developers <ChevronRight className={cn("w-4 h-4 transition-transform duration-300", activeMenu === 'dev' && "rotate-90")} />
-                            </button>
-                            <AnimatePresence>
-                                {activeMenu === 'dev' && (
-                                    <>
-                                        <div className="absolute top-full left-0 w-full h-4 bg-transparent" />
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: 10 }}
-                                            className="absolute top-full left-0 w-56 bg-white border border-gray-100 rounded-3xl shadow-2xl p-4 mt-2 z-[100]"
-                                        >
-                                            <Link to="/" className="block p-4 hover:bg-gray-50 rounded-2xl transition-all group/item">
-                                                <div className="font-bold text-gray-900 group-hover/item:text-blue-600 transition-colors uppercase tracking-tight text-xs">Documentation</div>
-                                            </Link>
-                                            <Link to="/" className="block p-4 hover:bg-gray-50 rounded-2xl transition-all group/item">
-                                                <div className="font-bold text-gray-900 group-hover/item:text-blue-600 transition-colors uppercase tracking-tight text-xs">API Reference</div>
-                                            </Link>
-                                            <a href="https://github.com/samastham" target="_blank" rel="noopener noreferrer" className="block p-4 hover:bg-gray-50 rounded-2xl transition-all group/item">
-                                                <div className="font-bold text-gray-900 group-hover/item:text-blue-600 transition-colors uppercase tracking-tight text-xs">Github</div>
-                                            </a>
-                                        </motion.div>
-                                    </>
-                                )}
-                            </AnimatePresence>
-                        </div>
-
-                        <Link to="/engagement" className="px-5 py-2 text-sm font-bold text-gray-700 hover:text-blue-600 transition-colors">How it Works</Link>
-
                         <Link to="/about" className="px-5 py-2 text-sm font-bold text-gray-700 hover:text-blue-600 transition-colors">Company</Link>
+                        <Link to="/careers" className="px-5 py-2 text-sm font-bold text-gray-700 hover:text-blue-600 transition-colors">Careers</Link>
                     </div>
 
                     <div className="hidden md:flex items-center space-x-4">
@@ -184,19 +127,8 @@ export function Navbar() {
                         <div className="flex flex-col space-y-4">
                             <Link to="/" className="text-xl font-black text-gray-900" onClick={() => setMobileMenuOpen(false)}>Home</Link>
                             <Link to="/healthcare" className="text-xl font-black text-gray-900" onClick={() => setMobileMenuOpen(false)}>Products</Link>
-                            <Link to="/solutions" className="text-xl font-black text-gray-900" onClick={() => setMobileMenuOpen(false)}>Solutions</Link>
-                            <div className="space-y-4">
-                                <div className="text-xl font-black text-gray-900 flex items-center justify-between">
-                                    Developers
-                                </div>
-                                <div className="pl-4 flex flex-col space-y-3 border-l-2 border-gray-100">
-                                    <Link to="/" className="text-base font-bold text-gray-500" onClick={() => setMobileMenuOpen(false)}>Documentation</Link>
-                                    <Link to="/" className="text-base font-bold text-gray-500" onClick={() => setMobileMenuOpen(false)}>API Reference</Link>
-                                    <a href="https://github.com/samastham" target="_blank" rel="noopener noreferrer" className="text-base font-bold text-gray-500" onClick={() => setMobileMenuOpen(false)}>Github</a>
-                                </div>
-                            </div>
-                            <Link to="/engagement" className="text-xl font-black text-gray-900" onClick={() => setMobileMenuOpen(false)}>How it Works</Link>
                             <Link to="/about" className="text-xl font-black text-gray-900" onClick={() => setMobileMenuOpen(false)}>Company</Link>
+                            <Link to="/careers" className="text-xl font-black text-gray-900" onClick={() => setMobileMenuOpen(false)}>Careers</Link>
                         </div>
                         <div className="pt-6 border-t border-gray-50 flex flex-col space-y-3">
                             <Link to="/signin" onClick={() => setMobileMenuOpen(false)}>

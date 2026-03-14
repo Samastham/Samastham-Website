@@ -31,22 +31,11 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="font-bold text-gray-900 mb-6 uppercase tracking-wider text-xs">Products</h4>
+                        <h4 className="font-bold text-gray-900 mb-6 uppercase tracking-wider text-xs">Product</h4>
                         <ul className="space-y-4 text-sm text-gray-600">
                             <li><Link to="/healthcare" className="hover:text-blue-600 transition-colors">Healthcare AI</Link></li>
                             <li><Link to="/foodtech" className="hover:text-blue-600 transition-colors">Food Tech AI</Link></li>
-                            <li><Link to="/solutions" className="hover:text-blue-600 transition-colors">Solutions</Link></li>
                             <li><Link to="/pricing" className="hover:text-blue-600 transition-colors">Pricing</Link></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="font-bold text-gray-900 mb-6 uppercase tracking-wider text-xs">Developers</h4>
-                        <ul className="space-y-4 text-sm text-gray-600">
-                            <li><a href="/docs" className="hover:text-blue-600 transition-colors">API Documentation</a></li>
-                            <li><a href="/status" className="hover:text-blue-600 transition-colors">System Status</a></li>
-                            <li><a href="https://github.com/samastham" className="hover:text-blue-600 transition-colors">Open Source</a></li>
-                            <li><a href="/security" className="hover:text-blue-600 transition-colors">Security Portal</a></li>
                         </ul>
                     </div>
 

@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Search, Lightbulb, Code2, HeadphonesIcon, ArrowRight } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { Link } from "react-router-dom"
+import { BrandAyura } from "../components/ui/BrandAyura"
 
 const stages = [
     {
@@ -126,7 +127,7 @@ export default function Engagement() {
                             </Link>
                             <Link to="/healthcare">
                                 <Button size="lg" variant="outline" className="h-16 px-12 rounded-2xl border-2 border-white/40 text-white hover:bg-white hover:text-blue-900 font-black text-xl transition-all duration-300">
-                                    Explore AYURA
+                                    Explore <BrandAyura type="name" size="h-6" className="translate-y-1" />
                                 </Button>
                             </Link>
                         </div>

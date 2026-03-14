@@ -18,7 +18,7 @@ const providerTabs = [
     {
         id: "doctors",
         label: "For doctors",
-        title: "Build your digital presence and enhance patient experience with Ayura",
+        title: <>Build your digital presence and enhance patient experience with <BrandAyura type='full' size='h-6' className='translate-y-1' /></>,
         stats: [
             { label: "doctors", value: "1L+" },
             { label: "patients", value: "30 Cr+" },
@@ -29,7 +29,7 @@ const providerTabs = [
     {
         id: "clinics",
         label: "For clinics",
-        title: "Powerful tools and software that help millions of patients discover you on Ayura",
+        title: <>Powerful tools and software that help millions of patients discover you on <BrandAyura type='full' size='h-6' className='translate-y-1' /></>,
         stats: [
             { label: "clinics", value: "60K" },
             { label: "patients", value: "2.5 Cr+" },
@@ -92,10 +92,10 @@ export default function Healthcare() {
                                     animate={{ opacity: 1, x: 0 }}
                                     className="mb-8 flex items-center gap-4"
                                 >
-                                    <BrandAyura showIcon={true} iconSize="h-16" className="text-4xl" />
+                                    <BrandAyura type="full" size="h-20" />
                                 </motion.div>
                                 <h1 className="text-6xl font-black text-gray-900 leading-tight">
-                                    Instant medical care. <span className="text-teal-600 block"><BrandAyura /> Anywhere.</span>
+                                    Instant medical care. <span className="text-teal-600 block"><BrandAyura type="name" /> Anywhere.</span>
                                 </h1>
                                 <ul className="space-y-4">
                                     {["Specialist consults online", "Verified experts online 24/7", "100% encrypted and confidential"].map((item, i) => (
@@ -131,7 +131,7 @@ export default function Healthcare() {
                         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                             <div className="max-w-2xl">
                                 <h2 className="text-4xl font-black text-gray-900 mb-4">Healthcare at your fingertips</h2>
-                                <p className="text-xl text-gray-500 font-medium">From prescriptions to records, AYURA connects every dot of your health journey.</p>
+                                <p className="text-xl text-gray-500 font-medium">From prescriptions to records,AYURA connects every dot of your health journey.</p>
                             </div>
                             <Button variant="outline" className="rounded-xl border-gray-200 font-bold h-12">View all services</Button>
                         </div>
@@ -173,7 +173,7 @@ export default function Healthcare() {
                                     <span className="inline-block px-4 py-2 rounded-full bg-teal-100 text-teal-700 font-black text-xs uppercase tracking-widest mb-6">Flagship Feature</span>
                                     <h2 className="text-5xl font-black text-gray-900 leading-tight">Your 24/7 Virtual <span className="text-teal-600">Health Companion.</span></h2>
                                     <p className="text-xl text-gray-500 font-medium mt-6 leading-relaxed">
-                                        Meet the AYURA AI. It's more than a bot—it's a multilingual health aide that understands your native language and responds to voice messages instantly.
+                                        Meet the <BrandAyura type="name" size="h-8" className="translate-y-1" /> AI. It's more than a bot—it's a multilingual health aide that understands your native language and responds to voice messages instantly.
                                     </p>
                                 </div>
 
@@ -205,7 +205,7 @@ export default function Healthcare() {
                                         <div className="flex items-center gap-3 mb-8 border-b pb-4">
                                             <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 font-black">AI</div>
                                             <div>
-                                                <div className="font-black text-sm text-gray-900">Ayura Assistant</div>
+                                                <div className="font-black text-sm text-gray-900"><BrandAyura type="full" size="h-5" /> Assistant</div>
                                                 <div className="text-[10px] text-green-500 font-bold flex items-center gap-1">
                                                     <span className="w-1.5 h-1.5 rounded-full bg-green-500" /> Online
                                                 </div>
@@ -347,29 +347,39 @@ export default function Healthcare() {
                     </div>
                 </section>
 
-                {/* App Download Section */}
-                <section className="py-24 bg-gray-50 border-t border-gray-100">
-                    <div className="container mx-auto px-6 text-center">
+                {/* Launching Soon Section */}
+                <section className="py-32 bg-gray-50 border-t border-gray-100 overflow-hidden relative">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-teal-100/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+                    <div className="container mx-auto px-6 text-center relative z-10">
                         <div className="max-w-4xl mx-auto space-y-12">
-                            <div className="space-y-4">
-                                <h2 className="text-5xl font-black text-gray-900 leading-tight">Experience <BrandAyura className="text-6xl" /> on mobile.</h2>
-                                <p className="text-xl text-gray-500">Fast, secure, and always at your fingertips. Download the app today.</p>
+                            <div className="space-y-6">
+                                <span className="inline-block px-4 py-2 rounded-full bg-teal-100 text-teal-700 font-black text-xs uppercase tracking-widest">
+                                    Product Roadmap
+                                </span>
+                                <h2 className="text-5xl md:text-7xl font-black text-gray-900 leading-tight">
+                                    The <BrandAyura type="full" size="h-12 md:h-16" className="translate-y-1" /> App. <span className="text-teal-600">Launching Soon.</span>
+                                </h2>
+                                <p className="text-xl md:text-2xl text-gray-500 font-medium max-w-2xl mx-auto">
+                                    We're putting health in the palm of your hand. Be at the front of the line for the most intelligent healthcare experience ever built.
+                                </p>
                             </div>
-                            <div className="flex flex-wrap justify-center gap-6">
-                                <Button className="bg-black hover:bg-gray-900 text-white rounded-2xl h-16 px-8 flex items-center gap-3">
+
+                            <div className="flex flex-col items-center gap-8">
+                                <div className="transition-transform hover:scale-105 active:scale-95">
+                                    <Button
+                                        onClick={() => window.open('https://forms.gle/your-form-id', '_blank')}
+                                        size="lg"
+                                        className="h-20 px-16 rounded-[30px] bg-teal-600 hover:bg-teal-700 text-white text-2xl font-black shadow-2xl shadow-teal-600/30"
+                                    >
+                                        Are you interested?
+                                    </Button>
+                                </div>
+
+                                <div className="flex items-center gap-8 opacity-40">
                                     <Apple className="w-8 h-8" />
-                                    <div className="text-left">
-                                        <div className="text-[10px] uppercase font-bold opacity-60">Download on the</div>
-                                        <div className="text-lg font-bold leading-none">App Store</div>
-                                    </div>
-                                </Button>
-                                <Button className="bg-black hover:bg-gray-900 text-white rounded-2xl h-16 px-8 flex items-center gap-3">
+                                    <div className="w-px h-8 bg-gray-300" />
                                     <Play className="w-8 h-8" />
-                                    <div className="text-left">
-                                        <div className="text-[10px] uppercase font-bold opacity-60">Get it on</div>
-                                        <div className="text-lg font-bold leading-none">Google Play</div>
-                                    </div>
-                                </Button>
+                                </div>
                             </div>
                         </div>
                     </div>
