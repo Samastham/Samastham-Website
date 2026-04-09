@@ -40,10 +40,10 @@ const Footer = () => {
                     <div>
                         <h4 className="text-lg font-bold mb-6 font-heading">Product</h4>
                         <ul className="space-y-4 text-secondary-400 font-sans">
-                            <li><Link to="/medicines" className="hover:text-primary-400 transition-colors">Medicines</Link></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Our Services</Link></li>
                             <li><Link to="/plans" className="hover:text-primary-400 transition-colors">Healthcare Plans</Link></li>
                             <li><Link to="/providers" className="hover:text-primary-400 transition-colors">For Providers</Link></li>
-                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">For Patients</Link></li>
+                            <li><Link to="/about" className="hover:text-primary-400 transition-colors">About Us</Link></li>
                         </ul>
                     </div>
 

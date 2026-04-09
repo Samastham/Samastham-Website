@@ -32,16 +32,15 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Home', href: '/' },
-        { name: 'Medicines', href: '/medicines' },
+        { name: 'Services', href: '/services' },
         { name: 'Plans', href: '/plans' },
         { name: 'About', href: '/about' },
-        { name: 'Services', href: '/services' },
+        { name: 'Contact', href: '/contact' },
     ];
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-4'
-                }`}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm py-4`}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -85,12 +84,7 @@ const Navbar = () => {
                         )}
                     </div>
 
-                    <Link
-                        to="/contact"
-                        className="text-secondary-600 hover:text-primary-600 font-medium transition-colors font-sans"
-                    >
-                        Contact
-                    </Link>
+
                 </div>
 
 
@@ -126,13 +120,7 @@ const Navbar = () => {
                         <Link to="/providers" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-600 hover:text-primary-600 pl-4 py-2">For Labs</Link>
                     </div>
 
-                    <Link
-                        to="/contact"
-                        className="text-secondary-600 hover:text-primary-600 font-medium py-2 border-t border-gray-100 font-sans"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                        Contact
-                    </Link>
+
                 </div>
             )}
         </nav>

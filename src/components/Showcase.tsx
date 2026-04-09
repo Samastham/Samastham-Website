@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Button from './ui/Button';
-import patientApp1 from '../assets/patient_app_1.png';
-import patientApp2 from '../assets/patient_app_2.png';
-import patientApp3 from '../assets/patient_app_3.png';
+import userAppHome from '../assets/user_app_home.jpg';
+import userAppMap from '../assets/user_app_map.jpg';
 
 const Showcase = () => {
     return (
@@ -21,17 +20,17 @@ const Showcase = () => {
                         >
                             {/* Back Left Image */}
                             <div className="absolute left-0 top-10 transform -rotate-6 w-56 shadow-2xl rounded-3xl border-4 border-white bg-white overflow-hidden z-0">
-                                <img src={patientApp2} alt="Patient App Screen 2" className="w-full h-auto" />
+                                <img src={userAppMap} alt="Patient App Map" className="w-full h-auto" />
                             </div>
 
                             {/* Back Right Image */}
                             <div className="absolute right-0 top-16 transform rotate-6 w-56 shadow-2xl rounded-3xl border-4 border-white bg-white overflow-hidden z-0">
-                                <img src={patientApp1} alt="Patient App Screen 1" className="w-full h-auto" />
+                                <img src={userAppMap} alt="Patient App Map" className="w-full h-auto" />
                             </div>
 
                             {/* Main Center Image */}
                             <div className="absolute top-0 transform w-64 shadow-2xl rounded-3xl border-4 border-white bg-white overflow-hidden z-10">
-                                <img src={patientApp3} alt="Patient App Home" className="w-full h-auto" />
+                                <img src={userAppHome} alt="Patient App Home" className="w-full h-auto" />
                             </div>
 
                             {/* Floating badge - Made smaller */}

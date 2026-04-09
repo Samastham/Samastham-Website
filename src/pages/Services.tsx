@@ -1,128 +1,247 @@
 import React from 'react';
-import { Search, Video, UserCheck, Stethoscope, TestTube, ChevronRight, Star, ShieldCheck, Clock, Activity } from 'lucide-react';
+import { 
+    Video, 
+    TestTube, 
+    Activity, 
+    Brain, 
+    Heart, 
+    ShieldCheck, 
+    Clock, 
+    CheckCircle2, 
+    Smartphone, 
+    Thermometer
+} from 'lucide-react';
 
-const specialties = [
-    { name: 'Cardiology', icon: Activity, desc: 'Heart specialists' }, // Will import locally
-    { name: 'Dermatology', icon: 'Sparkles', desc: 'Skin & hair care' }, // Using string as placeholder for custom icon if needed
-    { name: 'Pediatrics', icon: 'Baby', desc: 'Child specialists' },
-    { name: 'Orthopedics', icon: 'Bone', desc: 'Bone & joint care' },
-    { name: 'Neurology', icon: 'Brain', desc: 'Brain & nerves' },
-    { name: 'Dentistry', icon: 'Smile', desc: 'Dental care' },
+const serviceDetails = [
+    {
+        id: 'telemedicine',
+        title: 'Virtual Consultations',
+        icon: <Video className="w-8 h-8" />,
+        color: 'bg-blue-600',
+        lightColor: 'bg-blue-50',
+        textColor: 'text-blue-600',
+        summary: 'Connect with 22+ specialties through high-definition video calls in under 15 minutes.',
+        features: [
+            '24/7 access to General Physicians',
+            'HD video & audio call support',
+            'Digital prescriptions sent instantly',
+            'Free follow-up for 3 days'
+        ]
+    },
+    {
+        id: 'diagnostics',
+        title: 'Diagnostics & Lab Tests',
+        icon: <TestTube className="w-8 h-8" />,
+        color: 'bg-orange-600',
+        lightColor: 'bg-orange-50',
+        textColor: 'text-orange-600',
+        summary: 'NABL-certified lab partners providing home sample collection and rapid digital reports.',
+        features: [
+            'Home sample collection in 60 mins',
+            '100% accurate digital reports',
+            'Doctor review of reports included',
+            'Full body checkup packages'
+        ]
+    },
+    {
+        id: 'chronic-care',
+        title: 'Chronic Care Management',
+        icon: <Activity className="w-8 h-8" />,
+        color: 'bg-teal-600',
+        lightColor: 'bg-teal-50',
+        textColor: 'text-teal-600',
+        summary: 'Specialized programs for long-term health conditions with dedicated care coordinators.',
+        features: [
+            'Diabetes & Hypertension control',
+            'Dedicated health coaches',
+            'Regular vitals monitoring',
+            'Diet & lifestyle planning'
+        ]
+    },
+    {
+        id: 'mental-health',
+        title: 'Mental Health Support',
+        icon: <Brain className="w-8 h-8" />,
+        color: 'bg-purple-600',
+        lightColor: 'bg-purple-50',
+        textColor: 'text-purple-600',
+        summary: 'Confidential psychiatric support and counseling for stress, anxiety, and depression.',
+        features: [
+            'Verified clinical psychologists',
+            '100% private and confidential',
+            'Therapy sessions via video/chat',
+            'Support groups and wellness workshops'
+        ]
+    },
+    {
+        id: 'preventive',
+        title: 'Wellness & Prevention',
+        icon: <Heart className="w-8 h-8" />,
+        color: 'bg-red-600',
+        lightColor: 'bg-red-50',
+        textColor: 'text-red-600',
+        summary: 'Science-backed wellness plans tailored to your age, gender, and health profile.',
+        features: [
+            'Age-specific health checkups',
+            'Nutritional counseling',
+            'Vaccination drives at home',
+            'Personalized health risk assessment'
+        ]
+    },
+    {
+        id: 'digital-health',
+        title: 'Digital Health (ABDM)',
+        icon: <Smartphone className="w-8 h-8" />,
+        color: 'bg-primary-600',
+        lightColor: 'bg-primary-50',
+        textColor: 'text-primary-600',
+        summary: 'Integrated Ayushman Bharat Digital Mission (ABDM) support for unified health records.',
+        features: [
+            'Universal Health ID (ABHA) creation',
+            'Digital health locker for records',
+            'Seamless data sharing with providers',
+            'Unified medical history tracking'
+        ]
+    }
 ];
 
 const Services = () => {
     return (
-        <div className="bg-secondary-50 min-h-screen pt-20">
-
-            {/* 1. Hero Search Section */}
-            <section className="bg-primary-600 text-white py-20 relative overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
-
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">Your Health. Our Priority.</h1>
-                    <p className="text-xl text-primary-100 mb-10 max-w-2xl mx-auto font-sans">
-                        Find the best doctors, clinics, and hospitals nearest to you. Book appointments instantly.
-                    </p>
-
-                    {/* Search Bar */}
-                    <div className="max-w-4xl mx-auto bg-white p-2 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-2">
-                        <div className="flex-1 flex items-center bg-secondary-50 p-3 rounded-xl border border-secondary-200">
-                            <Search className="w-5 h-5 text-secondary-400 mr-3" />
-                            <input type="text" placeholder="Search doctors, specialties, symptoms..." className="w-full bg-transparent outline-none text-secondary-900 border-none focus:ring-0 placeholder:text-secondary-400" />
-                        </div>
-                        <div className="flex-1 flex items-center bg-secondary-50 p-3 rounded-xl border border-secondary-200">
-                            <svg className="w-5 h-5 text-secondary-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                            <input type="text" placeholder="Your location..." className="w-full bg-transparent outline-none text-secondary-900 border-none focus:ring-0 placeholder:text-secondary-400" />
-                        </div>
-                        <button className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-xl font-bold transition-colors w-full md:w-auto">
-                            Search
-                        </button>
+        <div className="bg-white min-h-screen pt-20 font-sans text-secondary-900">
+            {/* 1. Page Header */}
+            <section className="bg-slate-50 py-20 border-b border-gray-100">
+                <div className="container mx-auto px-6 max-w-[1200px]">
+                    <div className="max-w-3xl">
+                        <span className="text-primary-600 font-bold uppercase tracking-widest text-sm mb-4 block">Our Capabilities</span>
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                            Comprehensive healthcare <br />
+                            <span className="text-primary-600">delivered at home.</span>
+                        </h1>
+                        <p className="text-xl text-secondary-500 max-w-2xl leading-relaxed">
+                            We've engineered a full-stack digital healthcare ecosystem that brings 
+                            world-class medical services, diagnostics, and wellness programs directly to your doorstep.
+                        </p>
                     </div>
                 </div>
             </section>
 
-            {/* 2. Primary Consultation Categories */}
-            <section className="py-16 -mt-10 relative z-20">
-                <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* 2. Detailed Services Grid */}
+            <section className="py-24">
+                <div className="container mx-auto px-6 max-w-[1200px]">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        {serviceDetails.map((service) => (
+                            <div key={service.id} className="group relative">
+                                {/* Card Body */}
+                                <div className="p-8 rounded-[32px] border border-gray-100 bg-white hover:border-primary-100 transition-all duration-300 h-full flex flex-col hover:shadow-2xl hover:shadow-primary-600/5">
+                                    {/* Icon Box */}
+                                    <div className={`w-16 h-16 rounded-2xl ${service.lightColor} ${service.textColor} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300`}>
+                                        {service.icon}
+                                    </div>
 
-                        {[
-                            { title: "Video Consult", icon: <Video className="w-8 h-8" />, desc: "Talk to a doctor online instantly within 15 minutes.", color: "bg-blue-50 text-blue-600" },
-                            { title: "In-Clinic Visit", icon: <UserCheck className="w-8 h-8" />, desc: "Find top doctors near you and book confirmed appointments.", color: "bg-teal-50 text-teal-600" },
-                            { title: "Surgeries", icon: <Stethoscope className="w-8 h-8" />, desc: "Safe and trusted surgery centers with expert surgeons.", color: "bg-purple-50 text-purple-600" },
-                            { title: "Lab Tests", icon: <TestTube className="w-8 h-8" />, desc: "Sample collection from home and rapid digital reports.", color: "bg-orange-50 text-orange-600" },
-                        ].map((cat, i) => (
-                            <div key={i} className="bg-white p-6 rounded-2xl shadow-xl shadow-secondary-200/40 border border-secondary-100 hover:-translate-y-2 transition-transform cursor-pointer group">
-                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${cat.color} group-hover:scale-110 transition-transform`}>
-                                    {cat.icon}
+                                    {/* Content */}
+                                    <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                                    <p className="text-secondary-500 mb-8 flex-1 leading-relaxed">
+                                        {service.summary}
+                                    </p>
+
+                                    {/* Features List */}
+                                    <ul className="space-y-3 pt-6 border-t border-gray-50 mb-4">
+                                        {service.features.map((feature, idx) => (
+                                            <li key={idx} className="flex items-start gap-3 text-sm text-secondary-600 font-medium">
+                                                <CheckCircle2 className={`w-4 h-4 mt-0.5 ${service.textColor} flex-shrink-0`} />
+                                                <span>{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
-                                <h3 className="text-xl font-heading font-bold text-secondary-900 mb-2">{cat.title}</h3>
-                                <p className="text-secondary-500 text-sm mb-4">{cat.desc}</p>
-                                <div className="flex items-center text-primary-600 font-semibold text-sm">
-                                    Book Now <ChevronRight className="w-4 h-4 ml-1" />
-                                </div>
-                            </div>
-                        ))}
-
-                    </div>
-                </div>
-            </section>
-
-            {/* 3. Top Specialties */}
-            <section className="py-16 bg-white">
-                <div className="container mx-auto px-6">
-                    <div className="flex justify-between items-end mb-10">
-                        <div>
-                            <h2 className="text-3xl font-heading font-bold text-secondary-900 mb-2">Consult Top Specialties</h2>
-                            <p className="text-secondary-500 font-sans">Book appointments with certified specialists across India.</p>
-                        </div>
-                        <button className="hidden md:block text-primary-600 font-semibold hover:underline">View All Specialties</button>
-                    </div>
-
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                        {/* Visual Icons for specialties */}
-                        {[
-                            { name: 'Dentistry', img: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z' },
-                            { name: 'Cardiology', img: 'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' },
-                            { name: 'Dermatology', img: 'M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.1 0-6-2.27-6-6.2 0-2.47 2.05-5.69 6-9.45 3.95 3.76 6 6.98 6 9.45 0 3.93-2.9 6.2-6 6.2z' },
-                            { name: 'Pediatrics', img: 'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' },
-                            { name: 'Neurology', img: 'M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z' },
-                            { name: 'Orthopedics', img: 'M18.17 8.66l-6.49-6.49c-.39-.39-1.02-.39-1.41 0l-2.12 2.12c-.39.39-.39 1.02 0 1.41l1.41 1.41-5.66 5.66c-.39.39-.39 1.02 0 1.41l2.12 2.12c.39.39 1.02.39 1.41 0l5.66-5.66 1.41 1.41c.39.39 1.02.39 1.41 0l2.12-2.12c.38-.38.38-1.02-.01-1.41z' }
-                        ].map((spec, i) => (
-                            <div key={i} className="flex flex-col items-center justify-center p-6 bg-secondary-50 rounded-2xl border border-secondary-100 hover:border-primary-300 hover:bg-primary-50 transition-colors cursor-pointer group">
-                                <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center mb-4 text-primary-500 group-hover:text-primary-600 group-hover:scale-110 transition-transform">
-                                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d={spec.img} />
-                                    </svg>
-                                </div>
-                                <h4 className="font-bold text-secondary-900 text-center">{spec.name}</h4>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* 4. Trust Matrix / Value Prop */}
-            <section className="py-20 bg-secondary-900 text-white border-t-4 border-primary-500 relative overflow-hidden">
-                {/* Subtle pattern */}
-                <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '16px 16px' }}></div>
+            {/* 3. Technology & Logistics Section */}
+            <section className="py-24 bg-secondary-900 text-white overflow-hidden relative">
+                {/* Background Decoration */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-primary-600/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+                
+                <div className="container mx-auto px-6 max-w-[1200px] relative z-10">
+                    <div className="flex flex-col lg:flex-row items-center gap-20">
+                        <div className="lg:w-1/2">
+                            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+                                Backed by a high-speed <br />
+                                <span className="text-primary-400">logistics network.</span>
+                            </h2>
+                            <p className="text-secondary-400 text-lg mb-10 max-w-lg leading-relaxed">
+                                Our services aren't just digital. We operate a massive urban logistics fleet that handles 
+                                home sample collection and medicine delivery within defined TATs.
+                            </p>
 
-                <div className="container mx-auto px-6 relative z-10">
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-16">Why Ayura Subscriptions Are Better</h2>
-
-                    <div className="grid md:grid-cols-3 gap-10 text-center">
-                        {[
-                            { icon: <ShieldCheck className="w-10 h-10 mx-auto mb-4 text-primary-400" />, title: "100% Verified Doctors", desc: "Every doctor on Ayura undergoes a stringent 3-step verification process to ensure absolute clinical quality." },
-                            { icon: <Star className="w-10 h-10 mx-auto mb-4 text-primary-400" />, title: "2 Million+ Patient Reviews", desc: "Make informed choices by reading genuine, verified patient feedback before booking." },
-                            { icon: <Clock className="w-10 h-10 mx-auto mb-4 text-primary-400" />, title: "Zero Wait Times", desc: "Confirmed appointments that respect your time. Instant refunds for any delays over 30 mins." }
-                        ].map((val, i) => (
-                            <div key={i} className="p-4">
-                                {val.icon}
-                                <h3 className="text-xl font-bold mb-3">{val.title}</h3>
-                                <p className="text-secondary-400 font-sans">{val.desc}</p>
+                            <div className="grid grid-cols-2 gap-8">
+                                <div>
+                                    <div className="text-4xl font-bold text-white mb-1">60 Mins</div>
+                                    <div className="text-sm text-secondary-500 uppercase tracking-wider font-bold">Home Lab TAT</div>
+                                </div>
+                                <div>
+                                    <div className="text-4xl font-bold text-white mb-1">100%</div>
+                                    <div className="text-sm text-secondary-500 uppercase tracking-wider font-bold">Cold Chain Delivery</div>
+                                </div>
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Visual for TAT */}
+                        <div className="lg:w-1/2 relative">
+                            <div className="bg-white/10 backdrop-blur-md p-10 rounded-[40px] border border-white/10 relative">
+                                <div className="flex items-center gap-6 mb-8">
+                                    <div className="w-16 h-16 rounded-2xl bg-primary-500 flex items-center justify-center">
+                                        <Clock className="w-8 h-8 text-white" />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-xl font-bold">Lightning Fast Response</h4>
+                                        <p className="text-secondary-400 text-sm">Real-time tracking of medical dispatch</p>
+                                    </div>
+                                </div>
+                                {/* Progress bar mock */}
+                                <div className="space-y-6">
+                                    {[
+                                        { label: 'Tele-consult connection', time: '15 Min', p: 'w-full' },
+                                        { label: 'Lab sample collection', time: '60 Min', p: 'w-3/4' },
+                                        { label: 'Medicine delivery', time: '120 Min', p: 'w-2/3' }
+                                    ].map((item, i) => (
+                                        <div key={i}>
+                                            <div className="flex justify-between text-sm mb-2">
+                                                <span>{item.label}</span>
+                                                <span className="font-bold text-primary-400">{item.time}</span>
+                                            </div>
+                                            <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                                <div className={`h-full bg-primary-500 rounded-full ${item.p}`}></div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 4. Trust Matrix / CTA */}
+            <section className="py-24">
+                <div className="container mx-auto px-6 max-w-[1200px]">
+                    <div className="bg-primary-50 rounded-[48px] p-10 md:p-20 text-center relative overflow-hidden">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-secondary-900">Ready to experience better healthcare?</h2>
+                        <p className="text-lg text-secondary-600 mb-10 max-w-xl mx-auto">
+                            Join over 50,000 users who trust Ayura for their family's health needs. 
+                            Start your journey towards inclusive care today.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button className="bg-primary-600 hover:bg-primary-700 text-white px-10 py-4 rounded-2xl font-bold shadow-xl shadow-primary-600/20 transition-all">
+                                Explore Wellness Plans
+                            </button>
+                            <button className="bg-white border border-gray-200 hover:bg-gray-50 text-secondary-900 px-10 py-4 rounded-2xl font-bold shadow-sm transition-all text-sm">
+                                Talk to an Advisor
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>

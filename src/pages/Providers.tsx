@@ -1,5 +1,8 @@
 import React from 'react';
 import { Check } from 'lucide-react';
+import providerHome from '../assets/provider_home.jpg';
+import providerAssistant from '../assets/provider_assistant.jpg';
+import providerInstant from '../assets/provider_instant.jpg';
 
 const Providers = () => {
     return (
@@ -24,39 +27,14 @@ const Providers = () => {
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
 
                         {/* Left: Device Mockups */}
-                        <div className="w-full lg:w-1/2 relative lg:pr-12">
+                        <div className="w-full lg:w-1/2 relative lg:pr-12 flex justify-center lg:justify-start">
                             {/* Background Mobile */}
-                            <div className="absolute left-0 top-0 w-[260px] h-[520px] bg-white rounded-[32px] border-[8px] border-gray-100 shadow-xl overflow-hidden opacity-60 transform -rotate-6 origin-bottom-left">
-                                <div className="bg-[#1a237e] h-14 w-full flex items-center justify-center text-white text-xs font-bold">EDIT PROFILE</div>
-                                <div className="p-4 flex flex-col items-center">
-                                    <div className="w-16 h-16 rounded-full bg-gray-200 mb-2"></div>
-                                    <div className="h-3 w-24 bg-gray-200 rounded mb-4"></div>
-                                    <div className="w-full h-8 bg-gray-100 rounded mb-2"></div>
-                                    <div className="w-full h-8 bg-gray-100 rounded"></div>
-                                </div>
+                            <div className="absolute left-0 top-0 w-[260px] h-[520px] bg-white rounded-[32px] border-[8px] border-gray-100 shadow-xl overflow-hidden opacity-60 transform -rotate-6 origin-bottom-left hidden lg:block">
+                                <img src={providerAssistant} alt="Provider Assistant" className="w-full h-full object-cover" />
                             </div>
                             {/* Foreground Mobile */}
-                            <div className="relative z-10 w-[280px] h-[560px] bg-white rounded-[36px] border-[10px] border-gray-50 shadow-2xl overflow-hidden mx-auto lg:ml-auto lg:mr-0 transform translate-y-8">
-                                <div className="bg-[#1a237e] h-32 w-full pt-6 px-4">
-                                    <div className="text-white text-xs font-bold text-center mb-4">PROFILES</div>
-                                    <div className="absolute top-20 left-1/2 -translate-x-1/2 flex flex-col items-center w-full">
-                                        <div className="w-20 h-20 rounded-full bg-white border-4 border-white shadow-md flex items-center justify-center overflow-hidden">
-                                            <img src="https://ui-avatars.com/api/?name=Garima+Jacob&background=f3f4f6&color=4b5563" alt="Doctor" />
-                                        </div>
-                                        <h3 className="font-bold text-gray-900 mt-2 text-sm">Dr. Garima Jacob</h3>
-                                        <p className="text-xs text-gray-500">Gynecologist/Obstetrician</p>
-                                    </div>
-                                </div>
-                                <div className="mt-28 px-4 space-y-3">
-                                    <div className="p-3 border border-gray-100 rounded-lg flex items-center gap-3">
-                                        <div className="w-10 h-10 bg-gray-100 rounded flex-shrink-0"></div>
-                                        <div>
-                                            <div className="font-bold text-sm">Jacob Health Care</div>
-                                            <div className="text-[10px] text-gray-500">JP Nagar, Bangalore</div>
-                                        </div>
-                                    </div>
-                                    <div className="text-[#f59e0b] text-xs font-bold uppercase mt-4">ADD CLINIC</div>
-                                </div>
+                            <div className="relative z-10 w-[280px] h-[560px] bg-white rounded-[36px] border-[10px] border-gray-50 shadow-2xl overflow-hidden transform translate-y-8">
+                                <img src={providerHome} alt="Provider Home" className="w-full h-full object-cover" />
                             </div>
                         </div>
 
@@ -152,40 +130,7 @@ const Providers = () => {
 
                             {/* Foreground Mobile */}
                             <div className="absolute -bottom-10 right-0 lg:-right-4 w-[240px] h-[480px] bg-white rounded-[32px] border-[8px] border-gray-50 shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden z-20">
-                                <div className="bg-[#283593] h-14 w-full flex items-center px-4 pt-2">
-                                    <div className="text-white text-[10px] font-bold">PROFILES</div>
-                                </div>
-                                <div className="p-4 bg-white">
-                                    <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
-                                        <div className="w-12 h-12 rounded-full border border-green-500 overflow-hidden">
-                                            <img src="https://ui-avatars.com/api/?name=Rahul+Mishra&background=f3f4f6&color=4b5563" alt="Doctor" />
-                                        </div>
-                                        <div>
-                                            <div className="font-bold text-xs">Dr. Rahul Mishra</div>
-                                            <div className="text-[10px] text-gray-500">Gynecologist</div>
-                                            <div className="h-1 w-full bg-green-500 mt-1 rounded"></div>
-                                            <div className="text-[8px] text-green-600 font-bold mt-0.5">80% Profile completed</div>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-4">
-                                        <div>
-                                            <div className="text-[10px] font-bold text-gray-400 mb-1">PERSONAL & CONTACT DETAILS</div>
-                                            <div className="flex gap-2">
-                                                <div className="flex-1 bg-gray-50 p-2 rounded border border-gray-100 text-[10px] italic text-gray-400">1 Mandatory Field Missing</div>
-                                                <div className="flex-1 bg-green-50 p-2 rounded border border-green-100 text-[10px] text-green-700 font-medium">Verified and Live</div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className="text-[10px] font-bold text-gray-400 mb-1">PHOTO (HIDE/SHOW)</div>
-                                            <div className="flex gap-2">
-                                                <div className="w-8 h-8 rounded border border-gray-200"></div>
-                                                <div className="w-8 h-8 rounded border border-gray-200"></div>
-                                                <div className="w-8 h-8 rounded border border-gray-200"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <img src={providerInstant} alt="Provider Instant Consultations" className="w-full h-full object-cover" />
                             </div>
                         </div>
 
@@ -231,25 +176,8 @@ const Providers = () => {
                             </div>
 
                             {/* Foreground Mobile */}
-                            <div className="absolute top-1/2 -translate-y-[40%] right-0 lg:-right-8 w-[220px] h-[440px] bg-white border-[6px] border-gray-50 rounded-[28px] shadow-2xl overflow-hidden z-10 flex flex-col">
-                                <div className="flex-1 p-3 flex flex-col items-center">
-                                    <div className="w-full border-b border-gray-100 pb-2 mb-2">
-                                        <div className="text-[10px] font-bold text-gray-400">Registration</div>
-                                        <div className="text-[8px] text-gray-400">Registrations by City</div>
-                                    </div>
-                                    {/* Fake map outline */}
-                                    <div className="w-full h-32 border border-gray-100 bg-gray-50 rounded mb-4 relative overflow-hidden flex items-center justify-center">
-                                        <svg viewBox="0 0 100 100" className="w-[80%] h-[80%] opacity-20"><path d="M20,50 Q40,20 60,40 T90,60" fill="none" stroke="black" strokeWidth="2" /></svg>
-                                        <div className="absolute w-2 h-2 bg-green-500 rounded-full right-[40%] top-[60%]"></div>
-                                        <div className="absolute w-1.5 h-1.5 bg-green-400 rounded-full right-[38%] top-[55%]"></div>
-                                    </div>
-                                    <div className="w-full space-y-2">
-                                        <div className="text-[9px] font-bold text-gray-700">Top 5 Cities</div>
-                                        <div className="flex justify-between text-[8px] text-gray-500 border-b border-gray-50 pb-1"><span>Pune, India</span><span>18,244</span></div>
-                                        <div className="flex justify-between text-[8px] text-gray-500 border-b border-gray-50 pb-1"><span>Other City, India</span><span>47</span></div>
-                                        <div className="flex justify-between text-[8px] text-gray-500 border-b border-gray-50 pb-1"><span>Mumbai, India</span><span>58</span></div>
-                                    </div>
-                                </div>
+                            <div className="absolute top-1/2 -translate-y-[40%] right-0 lg:-right-8 w-[220px] h-[440px] bg-white border-[6px] border-gray-50 rounded-[28px] shadow-2xl overflow-hidden z-10">
+                                <img src={providerAssistant} alt="Provider Assistant Dashboard" className="w-full h-full object-cover" />
                             </div>
                         </div>
 

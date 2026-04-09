@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Showcase from '../components/Showcase';
+import ProvidersShowcase from '../components/ProvidersShowcase';
 import ServicesShowcase from '../components/ServicesShowcase';
 import ProvidersTeaser from '../components/ProvidersTeaser';
 import Testimonials from '../components/Testimonials';
@@ -21,6 +22,7 @@ const Home = () => {
             <Hero />
             <Features />
             <Showcase />
+            <ProvidersShowcase />
             <ConsultationFeatures onConsultClick={openAuthModal} />
             <ServicesShowcase onConsultClick={openAuthModal} onOrderClick={openAuthModal} />
             <ProvidersTeaser />
