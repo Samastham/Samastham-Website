@@ -7,9 +7,9 @@ interface ConsultationFeaturesProps {
 
 const ConsultationFeatures: React.FC<ConsultationFeaturesProps> = ({ onConsultClick }) => {
     const quickFeatures = [
-        { icon: <Clock className="w-6 h-6 text-[#f97316]" />, label: 'Talk within 30 min' },
-        { icon: <MessageSquare className="w-6 h-6 text-[#f97316]" />, label: 'Free follow up for 3 days' },
-        { icon: <FileText className="w-6 h-6 text-[#f97316]" />, label: 'Get a valid prescription' },
+        { icon: <Clock className="w-6 h-6 text-primary-600" />, label: 'Talk within 30 min' },
+        { icon: <MessageSquare className="w-6 h-6 text-primary-600" />, label: 'Free follow up for 3 days' },
+        { icon: <FileText className="w-6 h-6 text-primary-600" />, label: 'Get a valid prescription' },
     ];
 
     const trustFeatures = [
@@ -55,7 +55,7 @@ const ConsultationFeatures: React.FC<ConsultationFeaturesProps> = ({ onConsultCl
                     <div className="flex flex-wrap gap-8 mb-8">
                         {quickFeatures.map((f, i) => (
                             <div key={i} className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-orange-50 border border-orange-100 flex items-center justify-center flex-shrink-0">
+                                <div className="w-10 h-10 rounded-full bg-primary-50 border border-primary-100 flex items-center justify-center flex-shrink-0">
                                     {f.icon}
                                 </div>
                                 <span className="text-sm font-medium text-gray-700">{f.label}</span>
@@ -65,7 +65,7 @@ const ConsultationFeatures: React.FC<ConsultationFeaturesProps> = ({ onConsultCl
 
                     <button
                         onClick={onConsultClick}
-                        className="bg-[#f97316] hover:bg-[#ea6c0d] text-white font-bold py-3.5 px-10 rounded-lg transition-colors shadow-sm text-[15px]"
+                        className="bg-primary-600 hover:bg-primary-700 text-white font-bold py-3.5 px-10 rounded-lg transition-colors shadow-sm text-[15px]"
                     >
                         Consult now
                     </button>
@@ -75,7 +75,7 @@ const ConsultationFeatures: React.FC<ConsultationFeaturesProps> = ({ onConsultCl
                 <div className="grid grid-cols-3 divide-x divide-gray-200 border border-gray-200 rounded-xl overflow-hidden mb-16">
                     {stats.map((s, i) => (
                         <div key={i} className="flex flex-col items-center py-7 px-4 bg-gray-50">
-                            <span className="text-3xl font-bold text-[#f97316]">{s.value}</span>
+                            <span className="text-3xl font-bold text-primary-600">{s.value}</span>
                             <span className="text-sm text-gray-500 font-medium mt-1">{s.label}</span>
                         </div>
                     ))}

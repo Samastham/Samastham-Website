@@ -225,26 +225,7 @@ const Services = () => {
                 </div>
             </section>
 
-            {/* 4. Trust Matrix / CTA */}
-            <section className="py-24">
-                <div className="container mx-auto px-6 max-w-[1200px]">
-                    <div className="bg-primary-50 rounded-[48px] p-10 md:p-20 text-center relative overflow-hidden">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-secondary-900">Ready to experience better healthcare?</h2>
-                        <p className="text-lg text-secondary-600 mb-10 max-w-xl mx-auto">
-                            Join over 50,000 users who trust Ayura for their family's health needs. 
-                            Start your journey towards inclusive care today.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="bg-primary-600 hover:bg-primary-700 text-white px-10 py-4 rounded-2xl font-bold shadow-xl shadow-primary-600/20 transition-all">
-                                Explore Wellness Plans
-                            </button>
-                            <button className="bg-white border border-gray-200 hover:bg-gray-50 text-secondary-900 px-10 py-4 rounded-2xl font-bold shadow-sm transition-all text-sm">
-                                Talk to an Advisor
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* Removed CTA section for pre-launch phase */}
 
         </div>
     );

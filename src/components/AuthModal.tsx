@@ -24,14 +24,14 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
             {/* Modal Card */}
             <div className="relative z-10 bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden flex">
                 {/* Left Illustration Panel */}
-                <div className="hidden sm:flex flex-col items-center justify-center bg-[#fff5f3] w-5/12 p-6 text-center">
+                <div className="hidden sm:flex flex-col items-center justify-center bg-primary-50 w-5/12 p-6 text-center">
                     {/* CSS Illustration */}
                     <div className="relative w-24 h-28 mb-4">
                         {/* Patient */}
                         <div className="absolute bottom-0 left-1 w-10 h-20 flex flex-col items-center">
-                            <div className="w-8 h-8 rounded-full bg-[#f97316]/30 border-2 border-[#f97316]/60" />
-                            <div className="w-6 h-10 bg-[#38bdf8]/40 rounded-t-xl mt-1" />
-                            <div className="w-4 h-1 bg-[#f97316]/30 rounded-full mt-1" style={{ transform: 'rotate(-30deg)', transformOrigin: 'right center' }} />
+                            <div className="w-8 h-8 rounded-full bg-primary-200/30 border-2 border-primary-200/60" />
+                            <div className="w-6 h-10 bg-primary-300/40 rounded-t-xl mt-1" />
+                            <div className="w-4 h-1 bg-primary-200/30 rounded-full mt-1" style={{ transform: 'rotate(-30deg)', transformOrigin: 'right center' }} />
                         </div>
                         {/* Doctor */}
                         <div className="absolute bottom-0 right-0 w-12 h-24 flex flex-col items-center">
@@ -105,7 +105,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
                         </div>
                     </div>
 
-                    <button className="mt-8 w-full bg-[#f97316] hover:bg-[#ea6c0d] text-white font-bold py-3 rounded-lg transition-colors text-sm tracking-wide">
+                    <button className="mt-8 w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 rounded-lg transition-colors text-sm tracking-wide">
                         {view === 'login' ? 'Send OTP' : 'Create Account'}
                     </button>
 
@@ -113,14 +113,14 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
                         {view === 'login' ? (
                             <>
                                 New to Ayura?{' '}
-                                <button onClick={() => setView('signup')} className="text-[#f97316] font-bold hover:underline">
+                                <button onClick={() => setView('signup')} className="text-primary-600 font-bold hover:underline">
                                     Sign Up
                                 </button>
                             </>
                         ) : (
                             <>
                                 Already have an account?{' '}
-                                <button onClick={() => setView('login')} className="text-[#f97316] font-bold hover:underline">
+                                <button onClick={() => setView('login')} className="text-primary-600 font-bold hover:underline">
                                     Login
                                 </button>
                             </>

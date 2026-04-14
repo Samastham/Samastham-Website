@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Button from './ui/Button';
-import providerHome from '../assets/provider_home.jpg';
-import providerAssistant from '../assets/provider_assistant.jpg';
-import providerInstant from '../assets/provider_instant.jpg';
+import providerHomeNew from '../assets/provider_home_new.jpg';
+import providerOffline from '../assets/provider_offline.jpg';
+import providerNotifications from '../assets/provider_notifications.jpg';
 
 const ProvidersShowcase = () => {
     return (
@@ -21,17 +21,17 @@ const ProvidersShowcase = () => {
                         >
                             {/* Back Left Image */}
                             <div className="absolute left-0 top-10 transform -rotate-6 w-56 shadow-2xl rounded-3xl border-4 border-white bg-white overflow-hidden z-0">
-                                <img src={providerAssistant} alt="Provider Assistant" className="w-full h-auto" />
+                                <img src={providerNotifications} alt="Provider Notifications" className="w-full h-auto" />
                             </div>
 
                             {/* Back Right Image */}
                             <div className="absolute right-0 top-16 transform rotate-6 w-56 shadow-2xl rounded-3xl border-4 border-white bg-white overflow-hidden z-0">
-                                <img src={providerInstant} alt="Provider Instant Consultations" className="w-full h-auto" />
+                                <img src={providerOffline} alt="Provider Offline Toggle" className="w-full h-auto" />
                             </div>
 
                             {/* Main Center Image */}
                             <div className="absolute top-0 transform w-64 shadow-2xl rounded-3xl border-4 border-white bg-white overflow-hidden z-10">
-                                <img src={providerHome} alt="Provider Home Dashboard" className="w-full h-auto" />
+                                <img src={providerHomeNew} alt="Provider Home Dashboard" className="w-full h-auto" />
                             </div>
 
                             {/* Floating badge */}
@@ -76,14 +76,7 @@ const ProvidersShowcase = () => {
                             ))}
                         </ul>
 
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg shadow-primary-500/20">
-                                Register as Provider
-                            </button>
-                            <button className="bg-white border border-secondary-200 hover:bg-secondary-50 text-secondary-900 px-8 py-4 rounded-xl font-bold shadow-sm transition-all">
-                                View Demo
-                            </button>
-                        </div>
+                        {/* Removed CTA buttons for pre-launch info phase */}
                     </div>
                 </div>
             </div>

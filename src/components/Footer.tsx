@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="bg-secondary-900 text-white pt-20 pb-10">
             <div className="container mx-auto px-6">
-                <div className="grid md:grid-cols-4 gap-12 mb-16">
+                <div className="grid md:grid-cols-3 gap-12 mb-16">
                     <div className="col-span-1 md:col-span-1">
                         <Link to="/" className="flex items-center gap-2 font-bold text-2xl text-white mb-6">
                             <img src={logo} alt="Ayura" className="h-10 w-auto object-contain" />
@@ -27,23 +27,13 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div>
-                        <h4 className="text-lg font-bold mb-6 font-heading">Company</h4>
-                        <ul className="space-y-4 text-secondary-400 font-sans">
-                            <li><Link to="/about" className="hover:text-primary-400 transition-colors">About Ayura</Link></li>
-                            <li><a href="#" className="hover:text-primary-400 transition-colors">Leadership</a></li>
-                            <li><a href="#" className="hover:text-primary-400 transition-colors">Careers</a></li>
-                            <li><a href="#" className="hover:text-primary-400 transition-colors">Press & Media</a></li>
-                        </ul>
-                    </div>
+
 
                     <div>
                         <h4 className="text-lg font-bold mb-6 font-heading">Product</h4>
                         <ul className="space-y-4 text-secondary-400 font-sans">
                             <li><Link to="/services" className="hover:text-primary-400 transition-colors">Our Services</Link></li>
-                            <li><Link to="/plans" className="hover:text-primary-400 transition-colors">Healthcare Plans</Link></li>
                             <li><Link to="/providers" className="hover:text-primary-400 transition-colors">For Providers</Link></li>
-                            <li><Link to="/about" className="hover:text-primary-400 transition-colors">About Us</Link></li>
                         </ul>
                     </div>
 

@@ -1,134 +1,74 @@
 import React from 'react';
-import { Phone, Mail, MapPin, LifeBuoy, AlertTriangle, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import EarlyAccessCTA from '../components/EarlyAccessCTA';
 
 const Contact = () => {
     return (
-        <div className="pt-20 bg-secondary-50 min-h-screen">
-
-            {/* 1. Page Header */}
-            <div className="bg-white border-b border-secondary-200 py-16">
-                <div className="container mx-auto px-6 text-center">
-                    <h1 className="text-4xl md:text-5xl font-heading font-bold text-secondary-900 mb-4">Help & Support Center</h1>
-                    <p className="text-xl text-secondary-600 max-w-2xl mx-auto font-sans">
-                        How can we assist you today? Our dedicated support team is available 24/7.
+        <div className="bg-white min-h-screen font-sans text-secondary-900">
+            {/* Minimalist Header */}
+            <section className="pt-40 pb-20 bg-slate-50 border-b border-gray-100">
+                <div className="container mx-auto px-6 max-w-4xl text-center">
+                    <span className="text-primary-600 font-bold uppercase tracking-widest text-sm mb-4 block">Get In Touch</span>
+                    <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+                        Reach out to our <span className="text-primary-600">team.</span>
+                    </h1>
+                    <p className="text-xl text-secondary-500 max-w-2xl mx-auto leading-relaxed">
+                        We are currently in a closed beta phase and gearing up for our public launch.
+                        If you're a healthcare organization or investor, we'd love to hear from you.
                     </p>
                 </div>
-            </div>
+            </section>
 
-            <div className="container mx-auto px-6 py-16">
-
-                {/* Emergency Banner */}
-                <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-xl mb-12 flex flex-col sm:flex-row items-center justify-between shadow-sm">
-                    <div className="flex items-center mb-4 sm:mb-0">
-                        <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-red-600 mr-4 flex-shrink-0">
-                            <AlertTriangle className="w-6 h-6" />
+            {/* Direct Contact Info */}
+            <section className="py-24">
+                <div className="container mx-auto px-6 max-w-5xl">
+                    <div className="grid md:grid-cols-3 gap-12">
+                        {/* Office */}
+                        <div className="flex flex-col items-center text-center p-8 bg-white rounded-3xl border border-gray-100 shadow-xl shadow-primary-900/5 hover:border-primary-200 transition-colors">
+                            <div className="w-16 h-16 rounded-2xl bg-primary-50 flex items-center justify-center mb-6 text-primary-600">
+                                <MapPin className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-xl font-bold mb-3">Headquarters</h3>
+                            <p className="text-secondary-500 leading-relaxed">
+                                Jubilee Hills, Road No 36<br />
+                                Hyderabad, Telangana<br />
+                                India - 500033
+                            </p>
                         </div>
-                        <div>
-                            <h3 className="text-red-800 font-bold text-lg font-heading">Medical Emergency?</h3>
-                            <p className="text-red-600 font-sans">If you are experiencing a medical emergency, call an ambulance immediately.</p>
-                        </div>
-                    </div>
-                    <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-red-500/30 w-full sm:w-auto transition-colors">
-                        Tap for Ambulance
-                    </button>
-                </div>
 
-                <div className="grid lg:grid-cols-12 gap-12">
-
-                    {/* Left Column: FAQ & Quick Contact */}
-                    <div className="lg:col-span-5 space-y-8">
-                        <h2 className="text-2xl font-bold font-heading text-secondary-900 mb-6">Quick Contact</h2>
-
-                        <div className="grid gap-4">
-                            <a href="tel:18001234567" className="bg-white p-6 rounded-2xl border border-secondary-200 hover:border-primary-400 hover:shadow-md transition-all flex items-center group">
-                                <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mr-4 group-hover:bg-primary-500 group-hover:text-white transition-colors">
-                                    <Phone className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <p className="text-sm text-secondary-500 font-semibold uppercase tracking-wider">Patient Helpline (Toll-Free)</p>
-                                    <p className="text-xl font-bold text-secondary-900 font-sans">1-800-123-4567</p>
-                                </div>
-                            </a>
-
-                            <a href="mailto:support@ayurahealth.com" className="bg-white p-6 rounded-2xl border border-secondary-200 hover:border-primary-400 hover:shadow-md transition-all flex items-center group">
-                                <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mr-4 group-hover:bg-primary-500 group-hover:text-white transition-colors">
-                                    <Mail className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <p className="text-sm text-secondary-500 font-semibold uppercase tracking-wider">Email Support</p>
-                                    <p className="text-lg font-bold text-secondary-900 font-sans">support@ayurahealth.com</p>
-                                </div>
+                        {/* Email */}
+                        <div className="flex flex-col items-center text-center p-8 bg-white rounded-3xl border border-gray-100 shadow-xl shadow-primary-900/5 hover:border-primary-200 transition-colors">
+                            <div className="w-16 h-16 rounded-2xl bg-primary-50 flex items-center justify-center mb-6 text-primary-600">
+                                <Mail className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-xl font-bold mb-3">General Inquiries</h3>
+                            <p className="text-secondary-500 leading-relaxed mb-4">
+                                For partnerships, press, or general questions about our launch.
+                            </p>
+                            <a href="mailto:hello@ayura.health" className="font-bold text-primary-600 hover:text-primary-700">
+                                hello@ayura.health
                             </a>
                         </div>
 
-                        <div className="mt-12">
-                            <h2 className="text-2xl font-bold font-heading text-secondary-900 mb-6">Common Topics</h2>
-                            <div className="space-y-3">
-                                {['Booking physical appointments', 'Video consultation technical issues', 'Refunds & Payment queries', 'Updating health records'].map((topic, i) => (
-                                    <div key={i} className="bg-white p-4 rounded-xl border border-secondary-100 flex items-center cursor-pointer hover:bg-secondary-50 transition-colors">
-                                        <LifeBuoy className="w-5 h-5 text-secondary-400 mr-3" />
-                                        <span className="font-medium text-secondary-700 font-sans">{topic}</span>
-                                    </div>
-                                ))}
+                        {/* Phone */}
+                        <div className="flex flex-col items-center text-center p-8 bg-white rounded-3xl border border-gray-100 shadow-xl shadow-primary-900/5 hover:border-primary-200 transition-colors">
+                            <div className="w-16 h-16 rounded-2xl bg-primary-50 flex items-center justify-center mb-6 text-primary-600">
+                                <Phone className="w-8 h-8" />
                             </div>
-                        </div>
-
-                    </div>
-
-                    {/* Right Column: Secure Form */}
-                    <div className="lg:col-span-7">
-                        <div className="bg-white rounded-3xl shadow-xl shadow-secondary-200/50 border border-secondary-100 p-8 md:p-10">
-                            <div className="flex items-center mb-8 pb-6 border-b border-secondary-100">
-                                <MessageSquare className="w-8 h-8 text-primary-600 mr-4" />
-                                <div>
-                                    <h2 className="text-2xl font-bold font-heading text-secondary-900">Send an Inquiry</h2>
-                                    <p className="text-secondary-500 font-sans">Our team will respond within 24 hours.</p>
-                                </div>
-                            </div>
-
-                            <form className="space-y-6 font-sans">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label className="block text-sm font-semibold text-secondary-700 mb-2">First Name</label>
-                                        <input type="text" className="w-full bg-secondary-50 border border-secondary-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all" placeholder="John" />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-semibold text-secondary-700 mb-2">Last Name</label>
-                                        <input type="text" className="w-full bg-secondary-50 border border-secondary-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all" placeholder="Doe" />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-semibold text-secondary-700 mb-2">Email Address</label>
-                                    <input type="email" className="w-full bg-secondary-50 border border-secondary-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all" placeholder="john@example.com" />
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-semibold text-secondary-700 mb-2">Inquiry Type</label>
-                                    <select className="w-full bg-secondary-50 border border-secondary-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all text-secondary-700">
-                                        <option>General Support</option>
-                                        <option>Technical Issue</option>
-                                        <option>Billing & Refunds</option>
-                                        <option>Doctor Onboarding</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-semibold text-secondary-700 mb-2">Message</label>
-                                    <textarea rows={5} className="w-full bg-secondary-50 border border-secondary-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all resize-none" placeholder="Provide details here..."></textarea>
-                                </div>
-
-                                <button type="submit" className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary-500/30 transition-transform active:scale-95 text-lg">
-                                    Submit Request
-                                </button>
-                                <p className="text-xs text-center text-secondary-400 mt-4">By submitting, you agree to our strict HIPAA-compliant privacy policy.</p>
-                            </form>
+                            <h3 className="text-xl font-bold mb-3">Support</h3>
+                            <p className="text-secondary-500 leading-relaxed mb-4">
+                                Currently restricted to onboarded beta organizations only.
+                            </p>
+                            <a href="tel:04012345678" className="font-bold text-primary-600 hover:text-primary-700">
+                                040-1234-5678
+                            </a>
                         </div>
                     </div>
-
                 </div>
-            </div>
+            </section>
 
+            {/* Google Form CTA component */}
+            <EarlyAccessCTA />
         </div>
     );
 };

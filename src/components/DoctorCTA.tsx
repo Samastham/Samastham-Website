@@ -4,14 +4,14 @@ import { Stethoscope } from 'lucide-react';
 
 const DoctorCTA = () => {
     return (
-        <section className="bg-[#fff5f3] py-10">
+        <section className="bg-primary-50 py-10">
             <div className="container mx-auto px-6 max-w-[1200px]">
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-white rounded-2xl shadow-sm border border-orange-100 px-8 py-7">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-white rounded-2xl shadow-sm border border-primary-100 px-8 py-7">
                     {/* Illustration */}
                     <div className="flex items-center gap-5">
                         <div className="relative w-16 h-16 flex-shrink-0">
-                            <div className="w-16 h-16 rounded-full bg-[#fff0eb] border-2 border-[#f9c3b0] flex items-center justify-center">
-                                <Stethoscope className="w-7 h-7 text-[#f97316]" />
+                            <div className="w-16 h-16 rounded-full bg-primary-50 border-2 border-primary-200 flex items-center justify-center">
+                                <Stethoscope className="w-7 h-7 text-primary-600" />
                             </div>
                             <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary-500 rounded-full border-2 border-white flex items-center justify-center">
                                 <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -30,7 +30,7 @@ const DoctorCTA = () => {
                     {/* CTA */}
                     <Link
                         to="/providers"
-                        className="flex-shrink-0 bg-[#f97316] hover:bg-[#ea6c0d] text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-sm text-sm tracking-wide whitespace-nowrap"
+                        className="flex-shrink-0 bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-sm text-sm tracking-wide whitespace-nowrap"
                     >
                         Join Now
                     </Link>

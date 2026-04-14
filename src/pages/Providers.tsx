@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Check } from 'lucide-react';
 import providerHome from '../assets/provider_home.jpg';
 import providerAssistant from '../assets/provider_assistant.jpg';
 import providerInstant from '../assets/provider_instant.jpg';
+import ProviderDetailsModal from '../components/ProviderDetailsModal';
 
 const Providers = () => {
+    const [modalType, setModalType] = useState<'doctors' | 'clinics' | 'hospitals' | null>(null);
+
     return (
         <div className="pt-20 bg-white font-sans text-secondary-900 pb-20">
 
@@ -58,7 +61,10 @@ const Providers = () => {
                                 ))}
                             </ul>
 
-                            <button className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold py-3.5 px-8 rounded flex-shrink-0 transition-colors shadow-sm">
+                            <button 
+                                onClick={() => setModalType('doctors')}
+                                className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold py-3.5 px-8 rounded flex-shrink-0 transition-colors shadow-sm"
+                            >
                                 Learn more
                             </button>
                         </div>
@@ -92,7 +98,10 @@ const Providers = () => {
                                 ))}
                             </ul>
 
-                            <button className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold py-3.5 px-8 rounded flex-shrink-0 transition-colors shadow-sm">
+                            <button 
+                                onClick={() => setModalType('clinics')}
+                                className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold py-3.5 px-8 rounded flex-shrink-0 transition-colors shadow-sm"
+                            >
                                 Learn more
                             </button>
                         </div>
@@ -201,7 +210,10 @@ const Providers = () => {
                                 ))}
                             </ul>
 
-                            <button className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold py-3.5 px-8 rounded flex-shrink-0 transition-colors shadow-sm">
+                            <button 
+                                onClick={() => setModalType('hospitals')}
+                                className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold py-3.5 px-8 rounded flex-shrink-0 transition-colors shadow-sm"
+                            >
                                 Learn more
                             </button>
                         </div>
@@ -210,6 +222,12 @@ const Providers = () => {
                 </div>
             </section>
 
+            {/* Detailed Modals */}
+            <ProviderDetailsModal 
+                isOpen={modalType !== null} 
+                onClose={() => setModalType(null)} 
+                type={modalType} 
+            />
         </div>
     );
 };
