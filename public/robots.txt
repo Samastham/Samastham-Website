@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samastham.github.io/Samastham-Website/sitemap.xml
