@@ -7,7 +7,7 @@ import { Zap, Clock, ShieldCheck } from 'lucide-react';
 const InstantConsultFeature = () => {
     return (
         <section className="py-24 bg-white overflow-hidden border-t border-gray-100">
-            <div className="container mx-auto px-6 max-w-[1200px]">
+            <div className="container mx-auto px-6 max-w-[1380px]">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     {/* Visual */}
                     <div className="w-full lg:w-1/2 flex justify-center relative">

@@ -1,8 +1,9 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import Showcase from '../components/Showcase';
-import InstantConsultFeature from '../components/InstantConsultFeature';
-import ProvidersShowcase from '../components/ProvidersShowcase';
+import TrustStrip from '../components/TrustStrip';
+import PainPoints from '../components/PainPoints';
+import HowItWorks from '../components/HowItWorks';
+import PlatformOverview from '../components/PlatformOverview';
 import AIAssistantFeature from '../components/AIAssistantFeature';
 import EarlyAccessCTA from '../components/EarlyAccessCTA';
 
@@ -10,9 +11,10 @@ const Home = () => {
     return (
         <main>
             <Hero />
-            <Showcase />
-            <InstantConsultFeature />
-            <ProvidersShowcase />
+            <TrustStrip />
+            <PainPoints />
+            <HowItWorks />
+            <PlatformOverview />
             <AIAssistantFeature />
             <EarlyAccessCTA />
         </main>

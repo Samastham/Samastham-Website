@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Check } from 'lucide-react';
-import providerHome from '../assets/provider_home.jpg';
+import providerHome from '../assets/new_provider_home.jpeg';
 import providerAssistant from '../assets/provider_assistant.jpg';
 import providerInstant from '../assets/provider_instant.jpg';
 import ProviderDetailsModal from '../components/ProviderDetailsModal';

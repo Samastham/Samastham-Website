@@ -1,75 +1,177 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 
 const testimonials = [
     {
-        quote: "Late-night medical concerns were always stressful until I started using Ayura. The AI assistance provided immediate, accurate guidance in Hindi.",
-        author: "Ramesh Gupta",
-        role: "Farmer, Madhya Pradesh",
-        image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=100&h=100"
+        quote: "Late-night medical concerns were always stressful until I started using Ayura. The AI health assistant gave me immediate, accurate guidance in Hindi — without me having to type a single word.",
+        name: "Ramesh K.",
+        role: "Farmer",
+        location: "Madhya Pradesh",
+        initials: "RK",
+        color: "bg-primary-600",
     },
     {
-        quote: "The interface is incredibly intuitive. Scheduling appointments in Tamil is effortless, making healthcare accessible for my elderly parents.",
-        author: "Lakshmi Iyer",
-        role: "Homemaker, Chennai",
-        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=100&h=100"
+        quote: "Scheduling appointments in Tamil for my elderly parents is now effortless. Ayura's multilingual interface made quality healthcare feel genuinely accessible for the first time.",
+        name: "Lakshmi I.",
+        role: "Homemaker",
+        location: "Chennai",
+        initials: "LI",
+        color: "bg-violet-600",
     },
     {
-        quote: "The intelligent health assistant feature clarifies complex medical terms instantly. It's like having a knowledgeable guide available 24/7.",
-        author: "Arjun Reddy",
-        role: "Student, Hyderabad",
-        image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=100&h=100"
-    }
+        quote: "The instant consultation feature is a game-changer. I connected with a qualified doctor within 3 minutes during a medical emergency at 2 AM. Truly remarkable.",
+        name: "Arjun R.",
+        role: "Software Engineer",
+        location: "Hyderabad",
+        initials: "AR",
+        color: "bg-emerald-600",
+    },
+    {
+        quote: "Managing my clinic through the Ayura Providers app has completely transformed how I run my practice. Patient scheduling, records, and consultations — all in one clean interface.",
+        name: "Dr. Priya M.",
+        role: "General Physician",
+        location: "Bangalore",
+        initials: "PM",
+        color: "bg-orange-600",
+    },
+    {
+        quote: "The ABHA health locker feature means I no longer carry physical reports. My entire medical history is available to share with any doctor in seconds. This is the future.",
+        name: "Vikram S.",
+        role: "Business Owner",
+        location: "Pune",
+        initials: "VS",
+        color: "bg-primary-700",
+    },
 ];
 
 const Testimonials = () => {
+    const [current, setCurrent] = useState(0);
+    const [dir, setDir] = useState(1);
+    const intervalRef = useRef<ReturnType<typeof setInterval>>();
+
+    const go = (next: number) => {
+        const newIdx = (next + testimonials.length) % testimonials.length;
+        setDir(newIdx > current ? 1 : -1);
+        setCurrent(newIdx);
+        // Reset auto-play timer on manual navigation
+        clearInterval(intervalRef.current);
+        intervalRef.current = setInterval(() => {
+            setDir(1);
+            setCurrent(p => (p + 1) % testimonials.length);
+        }, 5000);
+    };
+
+    useEffect(() => {
+        intervalRef.current = setInterval(() => {
+            setDir(1);
+            setCurrent(p => (p + 1) % testimonials.length);
+        }, 5000);
+        return () => clearInterval(intervalRef.current);
+    }, []);
+
+    const t = testimonials[current];
+
     return (
-        <section className="py-24 bg-white relative overflow-hidden" id="testimonials">
-            {/* Decorative background elements */}
-            <div className="absolute top-0 left-0 w-64 h-64 bg-secondary-100 rounded-full blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary-100 rounded-full blur-3xl opacity-30 translate-x-1/3 translate-y-1/3"></div>
+        <section className="py-24 bg-slate-50 relative overflow-hidden" id="testimonials">
+            {/* BG blobs */}
+            <div className="absolute top-0 left-0 w-80 h-80 bg-primary-100/50 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-80 h-80 bg-violet-100/40 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <span className="text-primary-600 font-semibold tracking-wide uppercase text-sm">Testimonials</span>
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-900 mt-3 mb-6">
-                        Trusted by Leading <span className="text-primary-600">Healthcare Providers</span>
+            <div className="container mx-auto px-6 max-w-[820px] relative z-10">
+                {/* Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.4 }}
+                    transition={{ duration: 0.7 }}
+                    className="text-center mb-12"
+                >
+                    <span className="text-primary-600 font-bold tracking-widest uppercase text-xs mb-3 block">
+                        What People Are Saying
+                    </span>
+                    <h2 className="text-4xl md:text-5xl font-heading font-black text-secondary-900 leading-tight">
+                        Real Stories,{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
+                            Real Impact
+                        </span>
                     </h2>
-                    <p className="text-secondary-500 text-lg font-sans">
-                        Join thousands of doctors who have upgraded their practice with Ayura.
-                    </p>
-                </div>
+                </motion.div>
 
-                <div className="grid md:grid-cols-3 gap-8">
-                    {testimonials.map((testimonial, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="bg-white p-8 rounded-2xl shadow-lg border border-secondary-100 hover:shadow-xl transition-shadow duration-300"
-                        >
-                            <div className="flex items-center gap-4 mb-6">
-                                <img
-                                    src={testimonial.image}
-                                    alt={testimonial.author}
-                                    className="w-12 h-12 rounded-full object-cover border-2 border-primary-100"
-                                />
-                                <div>
-                                    <h4 className="font-bold text-secondary-900">{testimonial.author}</h4>
-                                    <p className="text-sm text-secondary-500">{testimonial.role}</p>
-                                </div>
-                            </div>
-                            <p className="text-secondary-600 italic leading-relaxed">"{testimonial.quote}"</p>
+                {/* Card — no overlap, clean edges */}
+                <AnimatePresence mode="wait" custom={dir}>
+                    <motion.div
+                        key={current}
+                        custom={dir}
+                        initial={{ opacity: 0, x: dir * 70 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: dir * -70 }}
+                        transition={{ duration: 0.38, ease: 'easeInOut' }}
+                        className="bg-white rounded-3xl border border-secondary-100 shadow-lg p-8 md:p-12 relative overflow-hidden"
+                    >
+                        {/* Decorative quote */}
+                        <Quote className="absolute top-6 right-8 w-16 h-16 text-secondary-50 rotate-180 pointer-events-none" strokeWidth={1} />
 
-                            <div className="flex text-yellow-400 mt-4 gap-0.5">
-                                {[...Array(5)].map((_, i) => (
-                                    <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                                ))}
+                        {/* Stars */}
+                        <div className="flex gap-1 mb-6">
+                            {[...Array(5)].map((_, i) => (
+                                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                            ))}
+                        </div>
+
+                        {/* Quote text */}
+                        <p className="text-xl md:text-2xl text-secondary-800 font-heading font-medium leading-relaxed mb-8 relative z-10">
+                            "{t.quote}"
+                        </p>
+
+                        {/* Author */}
+                        <div className="flex items-center gap-4">
+                            <div className={`w-12 h-12 ${t.color} rounded-full flex items-center justify-center text-white font-bold text-base flex-shrink-0`}>
+                                {t.initials}
                             </div>
-                        </motion.div>
-                    ))}
+                            <div>
+                                <p className="font-bold text-secondary-900">{t.name}</p>
+                                <p className="text-secondary-500 text-sm font-sans">{t.role} · {t.location}</p>
+                            </div>
+                        </div>
+                    </motion.div>
+                </AnimatePresence>
+
+                {/* Controls row — dots + buttons all in one centered row below the card */}
+                <div className="flex items-center justify-center gap-4 mt-7">
+                    {/* Prev button */}
+                    <button
+                        onClick={() => go(current - 1)}
+                        className="w-10 h-10 rounded-full bg-white border border-secondary-200 shadow-sm flex items-center justify-center hover:border-primary-400 hover:text-primary-600 transition-colors flex-shrink-0"
+                        aria-label="Previous"
+                    >
+                        <ChevronLeft className="w-4 h-4" />
+                    </button>
+
+                    {/* Dot indicators */}
+                    <div className="flex items-center gap-2">
+                        {testimonials.map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => go(i)}
+                                className={`h-2 rounded-full transition-all duration-300 ${
+                                    i === current
+                                        ? 'w-8 bg-primary-600'
+                                        : 'w-2 bg-secondary-200 hover:bg-secondary-400'
+                                }`}
+                                aria-label={`Go to testimonial ${i + 1}`}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Next button */}
+                    <button
+                        onClick={() => go(current + 1)}
+                        className="w-10 h-10 rounded-full bg-white border border-secondary-200 shadow-sm flex items-center justify-center hover:border-primary-400 hover:text-primary-600 transition-colors flex-shrink-0"
+                        aria-label="Next"
+                    >
+                        <ChevronRight className="w-4 h-4" />
+                    </button>
                 </div>
             </div>
         </section>

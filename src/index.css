@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
 @import "tailwindcss";
 
@@ -10,12 +10,11 @@
   --color-primary-300: #4db5be;
   --color-primary-400: #26a5b0;
   --color-primary-500: #0093a1;
-  /* slightly lighter than base for hover states */
   --color-primary-600: #007A85;
-  /* BASE AYURA TEAL */
   --color-primary-700: #00626a;
   --color-primary-800: #004950;
   --color-primary-900: #003135;
+  --color-primary-950: #001a1d;
 
   --color-secondary-50: #f8fafc;
   --color-secondary-100: #f1f5f9;
@@ -34,13 +33,13 @@
 
   /* Animations */
   --animate-float: float 6s ease-in-out infinite;
+  --animate-trust-scroll: trust-scroll 40s linear infinite;
 
   @keyframes fade-in {
     from {
       opacity: 0;
       transform: translateY(-10px);
     }
-
     to {
       opacity: 1;
       transform: translateY(0);
@@ -48,24 +47,34 @@
   }
 
   @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
 
-    0%,
-    100% {
-      transform: translateY(0);
-    }
+  @keyframes trust-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 
-    50% {
-      transform: translateY(-20px);
-    }
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
   }
 }
 
-@utility no-scrollbar {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; } .no-scrollbar::-webkit-scrollbar { display: none; }
+
+
 
 @utility glass-panel {
   @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)];
@@ -73,6 +82,20 @@
 
 @utility animate-fade-in {
   animation: fade-in 0.2s ease-out forwards;
+}
+
+@utility animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+/* Trust strip scroll animation */
+.trust-scroll-track {
+  animation: trust-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.trust-scroll-track:hover {
+  animation-play-state: paused;
 }
 
 @layer base {
@@ -83,4 +106,27 @@
   body {
     @apply font-sans text-secondary-900 antialiased bg-white;
   }
+
+  /* Better focus styles */
+  *:focus-visible {
+    outline: 2px solid theme('colors.primary.500');
+    outline-offset: 2px;
+  }
+
+  /* Wider container — less dead space on large screens */
+  .container {
+    max-width: 1380px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
 }
+
