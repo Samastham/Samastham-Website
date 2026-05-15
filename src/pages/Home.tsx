@@ -5,6 +5,7 @@ import PainPoints from '../components/PainPoints';
 import HowItWorks from '../components/HowItWorks';
 import PlatformOverview from '../components/PlatformOverview';
 import AIAssistantFeature from '../components/AIAssistantFeature';
+import InsuranceABHATeaser from '../components/InsuranceABHATeaser';
 import EarlyAccessCTA from '../components/EarlyAccessCTA';
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <TrustStrip />
             <PainPoints />
             <HowItWorks />
+            <InsuranceABHATeaser />
             <PlatformOverview />
             <AIAssistantFeature />
             <EarlyAccessCTA />

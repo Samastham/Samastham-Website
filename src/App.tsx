@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Providers from './pages/Providers';
 import Contact from './pages/Contact';
+import InsuranceABHA from './pages/InsuranceABHA';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/providers" element={<Providers />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/insurance-abha" element={<InsuranceABHA />} />
             {/* Redirect old broken paths to home */}
             <Route path="/medicines" element={<Navigate to="/" replace />} />
             <Route path="/plans" element={<Navigate to="/" replace />} />

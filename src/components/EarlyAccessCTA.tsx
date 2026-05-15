@@ -3,28 +3,13 @@ import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const perks = [
-    'Priority access to the Ayura app on launch day',
-    'Exclusive onboarding support from our health team',
-    'Free 3-month premium plan for early subscribers',
-    'Direct channel to shape the product roadmap',
+    'Priority access to the platform on launch day',
+    'Be part of our exclusive early tester community',
+    'Stay updated with our mission and progress',
+    'Help shape the future of accessible healthcare',
 ];
 
 const EarlyAccessCTA = () => {
-    const [email, setEmail] = useState('');
-    const [submitted, setSubmitted] = useState(false);
-    const [error, setError] = useState('');
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!email || !email.includes('@') || !email.includes('.')) {
-            setError('Please enter a valid email address.');
-            return;
-        }
-        setError('');
-        setSubmitted(true);
-        setEmail('');
-    };
-
     return (
         <section
             className="py-28 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-primary-50/20 border-t border-secondary-100"
@@ -54,7 +39,7 @@ const EarlyAccessCTA = () => {
                 >
                     <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 text-primary-700 px-5 py-2.5 rounded-full text-sm font-bold shadow-sm">
                         <Sparkles className="w-4 h-4" />
-                        Launching Soon — Limited Spots
+                        Launching Soon — Join the Mission
                     </div>
                 </motion.div>
 
@@ -66,9 +51,9 @@ const EarlyAccessCTA = () => {
                     transition={{ duration: 0.6, delay: 0.1 }}
                     className="text-4xl md:text-6xl font-heading font-black text-secondary-900 text-center mb-6 leading-tight"
                 >
-                    Be First to Experience<br />
+                    Be Part of the<br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-emerald-400">
-                        The Future of Healthcare
+                        Ayura Revolution
                     </span>
                 </motion.h2>
 
@@ -79,7 +64,7 @@ const EarlyAccessCTA = () => {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="text-secondary-600 text-xl text-center max-w-2xl mx-auto mb-12 font-sans leading-relaxed"
                 >
-                    Join thousands of people already on the waitlist. Get exclusive early access, premium benefits, and help us build India's most accessible healthcare platform.
+                    We're building the future of healthcare in India. Join our waitlist today to get exclusive updates and be the first to experience the platform when we go live.
                 </motion.p>
 
                 {/* Perks list */}
@@ -98,44 +83,41 @@ const EarlyAccessCTA = () => {
                     ))}
                 </motion.div>
 
-                {/* Email form */}
+                {/* Action Buttons */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.4 }}
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
-                    {submitted ? (
-                        <div className="max-w-md mx-auto text-center bg-white border border-secondary-200 rounded-3xl px-8 py-10 shadow-xl shadow-secondary-200/50">
-                            <div className="text-5xl mb-4">🎉</div>
-                            <h3 className="text-secondary-900 font-bold text-2xl font-heading mb-2">You're on the list!</h3>
-                            <p className="text-secondary-600 font-sans">We'll notify you the moment Ayura launches. Get ready to experience healthcare like never before.</p>
-                        </div>
-                    ) : (
-                        <form onSubmit={handleSubmit} noValidate className="max-w-lg mx-auto">
-                            <div className="flex flex-col sm:flex-row gap-3">
-                                <input
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => { setEmail(e.target.value); setError(''); }}
-                                    placeholder="Enter your email address"
-                                    className="flex-1 bg-white border border-secondary-200 rounded-xl px-5 py-4 text-secondary-900 placeholder:text-secondary-400 focus:ring-2 focus:ring-primary-500 outline-none font-sans shadow-sm"
-                                />
-                                <button
-                                    type="submit"
-                                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-xl font-bold hover:from-primary-400 hover:to-primary-500 transition-all shadow-xl shadow-primary-900/30 group whitespace-nowrap"
-                                >
-                                    Get Early Access
-                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                </button>
-                            </div>
-                            {error && <p className="text-red-500 text-sm mt-2 text-center font-sans font-medium">{error}</p>}
-                            <p className="text-secondary-500 text-xs text-center mt-4 font-sans font-medium">
-                                No spam, ever. We respect your privacy. Unsubscribe anytime.
-                            </p>
-                        </form>
-                    )}
+                    <a
+                        href="https://forms.google.com" // Replace with actual user form link
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:from-primary-400 hover:to-primary-500 transition-all shadow-xl shadow-primary-900/20 group"
+                    >
+                        Interested as a Patient?
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                    <a
+                        href="https://forms.google.com" // Replace with actual doctor form link
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white border-2 border-secondary-900 text-secondary-900 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-secondary-50 transition-all shadow-lg"
+                    >
+                        Interested as a Doctor?
+                    </a>
                 </motion.div>
+
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.6 }}
+                    className="text-secondary-500 text-xs text-center mt-8 font-sans font-medium"
+                >
+                    Select the appropriate form above to help us tailor your experience.
+                </motion.p>
             </div>
         </section>
     );

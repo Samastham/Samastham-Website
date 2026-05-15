@@ -30,15 +30,6 @@ const providerFeatures = [
     { icon: Mic, label: 'AI Transcription', desc: 'Automated clinic notes so you can focus on the patient.' },
 ];
 
-const ecosystemStats = [
-    { value: '500+', label: 'Verified Doctors', color: 'text-primary-600', bg: 'bg-primary-50', border: 'border-primary-100' },
-    { value: '200+', label: 'Partner Clinics', color: 'text-violet-600', bg: 'bg-violet-50', border: 'border-violet-100' },
-    { value: '100+', label: 'Certified Labs', color: 'text-amber-600', bg: 'bg-amber-50', border: 'border-amber-100' },
-    { value: '22+', label: 'Indian Languages', color: 'text-emerald-600', bg: 'bg-emerald-50', border: 'border-emerald-100' },
-    { value: '<3min', label: 'Doctor Response', color: 'text-red-600', bg: 'bg-red-50', border: 'border-red-100' },
-    { value: '2hr', label: 'Medicine Delivery', color: 'text-blue-600', bg: 'bg-blue-50', border: 'border-blue-100' },
-];
-
 const cardAnim = {
     hidden: { opacity: 0, y: 24 },
     show: { opacity: 1, y: 0 },
@@ -78,27 +69,6 @@ const PlatformOverview = () => {
                         Ayura unifies patients, doctors, clinics, labs, and pharmacies into a single intelligent network — powered by AI, governed by ABDM, designed for India.
                     </p>
                 </motion.div>
-
-                {/* ── Ecosystem Stats Bar ── */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.4 }}
-                    transition={{ duration: 0.6 }}
-                    className="grid grid-cols-3 md:grid-cols-6 gap-3 mb-16"
-                >
-                    {ecosystemStats.map((stat, i) => (
-                        <div
-                            key={i}
-                            className={`${stat.bg} ${stat.border} border rounded-2xl p-4 text-center hover:scale-105 transition-transform duration-200 cursor-default`}
-                        >
-                            <div className={`text-2xl font-heading font-black ${stat.color} leading-none mb-1`}>{stat.value}</div>
-                            <div className="text-xs text-secondary-500 font-semibold font-sans">{stat.label}</div>
-                        </div>
-                    ))}
-                </motion.div>
-
-                {/* ── Two-column bento grid ── */}
                 <div className="grid lg:grid-cols-2 gap-6">
 
                     {/* Patient card */}

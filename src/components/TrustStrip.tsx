@@ -6,12 +6,8 @@ const trustItems = [
     { icon: <BadgeCheck className="w-5 h-5" />, label: 'HPR Verified Doctors' },
     { icon: <Award className="w-5 h-5" />, label: 'NHA Registered' },
     { icon: <HeartPulse className="w-5 h-5" />, label: 'ISO 27001 Certified' },
-    { icon: <Stethoscope className="w-5 h-5" />, label: '500+ Doctors' },
-    { icon: <Building2 className="w-5 h-5" />, label: '200+ Clinics' },
-    { icon: <FlaskConical className="w-5 h-5" />, label: '100+ Labs' },
     { icon: <Pill className="w-5 h-5" />, label: 'Pharmacy Network' },
     { icon: <ShieldCheck className="w-5 h-5" />, label: 'HIPAA Aligned' },
-    { icon: <BadgeCheck className="w-5 h-5" />, label: '22+ Indian Languages' },
 ];
 
 const TrustStrip = () => {
