@@ -48,8 +48,7 @@ const testimonials = [
 const Testimonials = () => {
     const [current, setCurrent] = useState(0);
     const [dir, setDir] = useState(1);
-    const intervalRef = useRef<ReturnType<typeof setInterval>>();
-
+    const intervalRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
     const go = (next: number) => {
         const newIdx = (next + testimonials.length) % testimonials.length;
         setDir(newIdx > current ? 1 : -1);

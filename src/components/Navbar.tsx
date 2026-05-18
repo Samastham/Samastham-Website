@@ -131,8 +131,8 @@ const Navbar = () => {
                 {/* Right: Get Early Access Button */}
                 <div className="hidden md:flex items-center">
                     <a
-                        href="#early-access"
-                        onClick={(e) => handleNavClick(e, '#early-access')}
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSd-zGMjk63nlaqcMLH_aeYALwibVSHQWeDLiyw5Gv-yedIORQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer"
+                        
                         className="bg-[#0093a1] hover:bg-[#007b83] text-white px-6 py-2.5 rounded-lg font-bold text-[15px] transition-colors shadow-sm"
                     >
                         Get Early Access
@@ -185,8 +185,8 @@ const Navbar = () => {
 
                     <div className="pt-6 mt-4 border-t border-gray-100">
                         <a
-                            href="#early-access"
-                            onClick={(e) => handleNavClick(e, '#early-access')}
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSd-zGMjk63nlaqcMLH_aeYALwibVSHQWeDLiyw5Gv-yedIORQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer"
+                            
                             className="block text-center bg-[#0093a1] text-white px-6 py-3 rounded-xl font-bold"
                         >
                             Get Early Access

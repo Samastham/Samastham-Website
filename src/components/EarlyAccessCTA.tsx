@@ -92,7 +92,7 @@ const EarlyAccessCTA = () => {
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
                     <a
-                        href="https://forms.google.com" // Replace with actual user form link
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSd-zGMjk63nlaqcMLH_aeYALwibVSHQWeDLiyw5Gv-yedIORQ/viewform?usp=publish-editor" // Replace with actual user form link
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:from-primary-400 hover:to-primary-500 transition-all shadow-xl shadow-primary-900/20 group"
@@ -101,7 +101,7 @@ const EarlyAccessCTA = () => {
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a
-                        href="https://forms.google.com" // Replace with actual doctor form link
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSeB9TU0e0s_0-2hPs8Da9DpOT5xucb90e55KYi69pBYa8IPMg/viewform" // Replace with actual doctor form link
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white border-2 border-secondary-900 text-secondary-900 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-secondary-50 transition-all shadow-lg"

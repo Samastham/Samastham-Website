@@ -44,8 +44,9 @@ const HowItWorks = () => {
   const s = steps[active];
 
   return (
-    <section className="py-24 relative overflow-hidden" id="how-it-works"
+    <section className="py-16 md:py-24 relative overflow-hidden" id="how-it-works"
       style={{ background: 'linear-gradient(160deg, #0a0f1e 0%, #0f172a 50%, #0a1628 100%)' }}>
+
 
       {/* Background glows */}
       <div className="absolute inset-0 pointer-events-none">
@@ -55,7 +56,7 @@ const HowItWorks = () => {
         <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-[80px] bg-violet-900/20" />
       </div>
 
-      <div className="max-w-[1100px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1100px] mx-auto px-4 md:px-6 relative z-10">
 
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }}
@@ -64,7 +65,7 @@ const HowItWorks = () => {
             style={{ color: s.color, borderColor: `${s.color}40`, background: `${s.color}12` }}>
             <Sparkles className="w-3 h-3" /> Your Healthcare Journey
           </span>
-          <h2 className="text-4xl md:text-5xl font-heading font-black text-white mb-4 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-heading font-black text-white mb-4 leading-tight">
             From Search to{' '}
             <motion.span key={active} initial={{ opacity: 0 }} animate={{ opacity: 1 }}
               className="text-transparent bg-clip-text"
@@ -76,7 +77,7 @@ const HowItWorks = () => {
         </motion.div>
 
         {/* ── Step Path ── */}
-        <div className="relative mb-12">
+        <div className="hidden md:block relative mb-12">
           {/* Connecting line base */}
           <div className="absolute top-[22px] left-0 right-0 h-[2px] bg-white/5 mx-8 z-0" />
           {/* Filled progress line */}
@@ -140,9 +141,9 @@ const HowItWorks = () => {
             style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
 
             {/* Left: Info */}
-            <div className="p-8 lg:p-10 flex flex-col justify-center">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center"
+            <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
                   style={{ background: `linear-gradient(135deg, ${s.color}30, ${s.color}15)`, border: `1px solid ${s.color}40` }}>
                   <s.Icon className="w-6 h-6" style={{ color: s.color }} strokeWidth={2} />
                 </div>
@@ -155,7 +156,7 @@ const HowItWorks = () => {
               <h3 className="text-2xl md:text-3xl font-heading font-black text-white mb-4 leading-tight">{s.title}</h3>
               <p className="text-slate-400 font-sans leading-relaxed mb-6">{s.desc}</p>
 
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="flex flex-wrap gap-2 mb-6 md:mb-8">
                 {s.tags.map(tag => (
                   <span key={tag} className="text-xs font-semibold px-3 py-1.5 rounded-full"
                     style={{ color: s.color, border: `1px solid ${s.color}40`, background: `${s.color}12` }}>{tag}</span>
@@ -177,7 +178,7 @@ const HowItWorks = () => {
             </div>
 
             {/* Right: Visual panel */}
-            <div className="relative flex items-center justify-center p-8 overflow-hidden min-h-[320px]"
+            <div className="relative flex items-center justify-center p-6 md:p-8 overflow-hidden min-h-[280px] md:min-h-[320px]"
               style={{ background: `linear-gradient(135deg, ${s.color}10, transparent 60%)`, borderLeft: '1px solid rgba(255,255,255,0.05)' }}>
               {/* Big emoji / icon backdrop */}
               <motion.div
@@ -233,7 +234,7 @@ const HowItWorks = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <a href="#early-access"
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-zGMjk63nlaqcMLH_aeYALwibVSHQWeDLiyw5Gv-yedIORQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-xl font-bold hover:opacity-90 transition-all shadow-xl group"
             style={{ background: `linear-gradient(135deg, ${s.color}, #0f172a)`, boxShadow: `0 20px 40px ${s.color}30` }}>
             Start Your Journey <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

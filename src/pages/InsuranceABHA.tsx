@@ -103,7 +103,7 @@ const InsuranceABHA = () => {
                                     <p className="text-secondary-500 text-lg leading-relaxed font-sans mb-8">
                                         With Ayura, your ABHA ID is the backbone of your healthcare journey. Every consultation, prescription, lab report and hospital visit is automatically filed against your ID — available whenever, wherever you need it.
                                     </p>
-                                    <a href="#early-access"
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-zGMjk63nlaqcMLH_aeYALwibVSHQWeDLiyw5Gv-yedIORQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white px-7 py-4 rounded-xl font-bold transition-all shadow-lg shadow-violet-200 group">
                                         Link Your ABHA <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                     </a>
@@ -223,7 +223,7 @@ const InsuranceABHA = () => {
                                         Check your live coverage, find cashless hospitals nearby, file claims digitally and get guided support — all without leaving the app.
                                     </p>
                                     <div className="flex flex-col sm:flex-row gap-3">
-                                        <a href="#early-access"
+                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-zGMjk63nlaqcMLH_aeYALwibVSHQWeDLiyw5Gv-yedIORQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer"
                                             className="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white px-7 py-4 rounded-xl font-bold transition-all shadow-lg shadow-cyan-100 group">
                                             Check My Coverage <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                         </a>
@@ -329,7 +329,7 @@ const InsuranceABHA = () => {
                         <p className="text-secondary-400 font-sans mb-8 leading-relaxed">
                             Join the Ayura waitlist and be among the first to experience seamless ABHA integration and smart insurance management.
                         </p>
-                        <a href="/#early-access"
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-zGMjk63nlaqcMLH_aeYALwibVSHQWeDLiyw5Gv-yedIORQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:from-primary-400 hover:to-primary-500 transition-all shadow-xl group">
                             Join the Waitlist <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </a>

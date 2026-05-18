@@ -62,7 +62,7 @@ const Footer = () => {
                                 <li><Link to="/services" className="hover:text-primary-400 transition-colors">Our Services</Link></li>
                                 <li><a href="/#how-it-works" className="hover:text-primary-400 transition-colors">How It Works</a></li>
                                 <li><a href="/#security" className="hover:text-primary-400 transition-colors">Security & Privacy</a></li>
-                                <li><a href="/#early-access" className="hover:text-primary-400 transition-colors">Early Access</a></li>
+                                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd-zGMjk63nlaqcMLH_aeYALwibVSHQWeDLiyw5Gv-yedIORQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">Early Access</a></li>
                             </ul>
                         </div>
 
